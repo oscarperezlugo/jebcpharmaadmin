@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PanelAdmin.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrativo JEBCPHARMA</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/columnas.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Content/Print.css" rel="stylesheet" media="print"/>
+</head>
+<body>
+    <form runat="server">
+        <nav class="nave fijador">
+            <div  class="col2L  col0M col0S col0T" >
+                  <a href="Default.aspx"><img id="logo" src="img/weblogo_jebcpharma-2.png" /></a>
+            </div>            
+        </nav>
+        <nav class="subnave fijadordos">
+            <label class="fa fa-bars botonsub no-print" for="check"/>                                          
+        </nav> 
+        <div id="cajacontenedor" class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>            
+        </div> 
+        <input type="checkbox" class="checkbox" id="check"/>
+        <label class="panelbloqueadorizq" for="check"></label>
+        <div id="block1" class="menulateral" >
+            <div class="desplegable">
+                <h3 class="titulomenu">DASHBOARD</h3>
+                <ul>
+                    <li><a href="Default.aspx">HOME</a></li>
+                </ul>
+                <h3 class="titulomenu">CLIENTES</h3>
+                <ul>
+                    <li><a href="Lista.aspx">LISTA</a></li>
+                    <li><a href="Cliente.aspx">CREACION</a></li> 
+                    <li><a href="EditarUno.aspx">EDITAR CLIENTE</a></li>  
+                </ul>
+                <%--<h3 class="titulomenu">PROVEEDORES</h3>
+                <ul>                                       
+                </ul>--%>
+            </div>
+            <div class="desplegable">
+                <h3 class="titulomenu">VENTAS</h3>
+                <ul>
+                    <li><a href="Pedido.aspx">GENERAR NOTA DE ENTREGA</a></li>
+                    <li><a href="Pedidos.aspx">NOTAS DE ENTREGA</a></li>
+                    <li><a href="Cotizacion.aspx">COTIZAR</a></li>
+                    <li><a href="Cotizaciones.aspx">COTIZACIONES</a></li> 
+                    <li><a href="Cobranza.aspx">COBRANZA</a></li>
+                    <%--<li><a href="Delivery.aspx">DESPACHO</a></li>--%>
+                </ul>
+            </div>
+            <%--<div class="desplegable">
+                <h3 class="titulomenu">COTIZACIONES</h3>
+                <ul>
+                    <li><a href="Cotizacion.aspx">CREACION</a></li>
+                    <li><a href="Cotizaciones.aspx">LISTA</a></li>                    
+                </ul>
+            </div>--%>
+            <div class="desplegable">
+                <h3 class="titulomenu">COMPRAS</h3>
+                <ul>
+                    <li><a href="Compra.aspx">ORDEN DE COMPRA</a></li> 
+                    <li><a href="ListaProductos.aspx">LISTA DE PRODUCTOS</a></li> 
+                    <li><a href="ListaProv.aspx">LISTA PROVEEDORES</a></li>
+                    <li><a href="Proveedor.aspx">CREACION PROVEEDORES</a></li> 
+                    <li><a href="EditarProv.aspx">EDITAR PROVEEDORES</a></li> 
+                    <li><a href="Producto.aspx">CREACION PRODUCTO</a></li>
+                    <li><a href="Categoria.aspx">CREACION CATEGORIA</a></li>
+                    <%--<li>EDICION PRODUCTO</li>
+                    <li>EDICION CATEGORIA</li>--%>
+                </ul>
+            </div>
+            <div class="desplegable">
+                <h3 class="titulomenu">TASA</h3>
+                <ul>
+                    <li><a href="Tasa.aspx">ACTUALIZAR TASA</a></li>                    
+                </ul>
+            </div>
+            <div class="desplegable">
+                <h3 class="titulomenu">REPORTES</h3>
+                <ul>                    
+                    <li><a href="ListaProductos.aspx">EXISTENCIA POR PRODUCTO</a></li>                    
+                    <li><a href="ConsProdCli.aspx">PRODUCTOS POR CLIENTE</a></li>
+                    <li><a href="ConsVentasMes.aspx">VENTAS POR MES</a></li>
+                    <li><a href="ConsVenCli.aspx">VENTAS POR CLIENTE</a></li>
+                    <li><a href="PorCobrar.aspx">CUENTAS POR COBRAR</a></li>
+                    <li><a href="Nomina.aspx">CREAR NOMINA</a></li> 
+                    <li><a href="EditarNomina.aspx">EDITAR NOMINA</a></li> 
+                    <li><a href="ClientesVendedor.aspx">CLIENTES X VENDEDOR</a></li> 
+                    <li><a href="ConsVentasVend.aspx">VENTAS X VENDEDOR</a></li> 
+                </ul>
+            </div>
+            <%--<div class="desplegable">
+                <h3 class="titulomenu">GASTOS</h3>
+                <ul>
+                    <li>GASTO PUNTUAL</li>
+                    <li>GASTO RECURRENTE</li>
+                    <li class="ultimomenu">RECURSO HUMANO</li>
+                </ul>
+            </div>--%>
+        </div>
+               
+    </form>
+</body>
+</html>
