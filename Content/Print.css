@@ -18,13 +18,13 @@
 }
 #rifp {
     position: absolute;
-    left: 380px;
+    left: 385px;
     top: 90px;
     font-size: 10px;
 }
 #fecha {
     position: absolute;
-    left: 545px;
+    left: 550px;
     top: 90px;
     font-size: 10px;
 }
@@ -48,9 +48,27 @@
 }
 #lineasfact {
     position: absolute;
-    left: 35px;
+    left: -15px;
     top: 155px;
     width: 90%;
+    font-size: 10px;
+}
+#centro {
+    position: absolute;
+    left: -15px;
+    top: 310px;
+    font-size: 10px;
+}
+#numpe {
+    position: absolute;
+    left: -15px;
+    top: 325px;
+    font-size: 10px;
+}
+#noten {
+    position: absolute;
+    left: -15px;
+    top: 340px;
     font-size: 10px;
 }
 #tot1 {
@@ -97,9 +115,17 @@
     color: #717171;
     text-align: center;
 }
+.mGrid2 td {
+    padding: 5px;
+    color: #717171;
+    text-align: center;
+}
 .mGrid th {
     display:none;
 }
+/*.mGrid2 th {
+    display: none;
+}*/
 .card {
     position: relative;
     display: -ms-flexbox;

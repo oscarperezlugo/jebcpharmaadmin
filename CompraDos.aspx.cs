@@ -11,12 +11,14 @@ namespace PanelAdmin
 {
     public partial class CompraDos : System.Web.UI.Page
     {
+        Guid Ejec;
         protected void Page_Load(object sender, EventArgs e)
         {
             DropDownList2.Attributes.Add("style", "display:none");
             prefifin.Text = "0,00";
             Label5.Text = "0,00";
             DropDownList2.Enabled = false;
+            Ejec = Guid.Parse(Request.Cookies["idventaC"].Value);
         }
         protected void Prod(object sender, EventArgs e)
         {
@@ -33,22 +35,22 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            double m;
-            int z;
-            if (Request.Cookies["totalC"] == null)
-            {
-                m = double.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
-            }
-            else
-            {
-                double n = Double.Parse(Request.Cookies["totalC"].Value);
-                double x = Double.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
-                m = n + x;
-            }
-            HttpCookie totalS = new HttpCookie("totalC");
-            totalS.Value = m.ToString();
-            totalS.Expires = DateTime.Now.AddDays(30);
-            Response.Cookies.Add(totalS);
+            ////double m;
+            ////int z;
+            ////if (Request.Cookies["totalC"] == null)
+            ////{
+            ////    m = double.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
+            ////}
+            ////else
+            ////{
+            ////    double n = Double.Parse(Request.Cookies["totalC"].Value);
+            ////    double x = Double.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
+            ////    m = n + x;
+            ////}
+            ////HttpCookie totalS = new HttpCookie("totalC");
+            ////totalS.Value = m.ToString();
+            ////totalS.Expires = DateTime.Now.AddDays(30);
+            ////Response.Cookies.Add(totalS);
             //if (Request.Cookies["lineasC"] == null)
             //{
             //    z = 1;
@@ -63,7 +65,7 @@ namespace PanelAdmin
             ////total2S.Value = z.ToString();
             //total2S.Expires = DateTime.Now.AddDays(30);
             //Response.Cookies.Add(total2S);
-            string Ejec = Request.Cookies["idventaC"].Value;
+            //string Ejec = Request.Cookies["idventaC"].Value;
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
                 string saveStaff = "INSERT into Lineas (Producto, iDVenta, Cantidad, Precio) VALUES (@Producto, @iDVenta, @Cantidad, @Precio)";
@@ -72,7 +74,7 @@ namespace PanelAdmin
                 {
                     querySaveStaff.Connection = openCon;
                     querySaveStaff.Parameters.Add("@Producto", SqlDbType.VarChar).Value = DropDownList1.SelectedValue;
-                    querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Guid.Parse(Ejec);
+                    querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Ejec;
                     querySaveStaff.Parameters.Add("@Cantidad", SqlDbType.Int).Value = Int32.Parse(Correo.Text);
                     querySaveStaff.Parameters.Add("@Precio", SqlDbType.Money).Value = Decimal.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
                     try
@@ -98,7 +100,7 @@ namespace PanelAdmin
 
 
                     querySaveStaff.Parameters.Add("@Monto", SqlDbType.Money).Value = Decimal.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
-                    querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Guid.Parse(Ejec);
+                    querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Ejec;
                     try
                     {
                         openCon.Open();
@@ -129,8 +131,7 @@ namespace PanelAdmin
         {
             int i = GridView1.SelectedIndex;
             string Ejec = Request.Cookies["idventaC"].Value;
-            string Ejec2 = Request.Cookies["totalC"].Value;
-            string Ejec3 = Request.Cookies["lineasC"].Value;
+            
             HttpCookie total2S = new HttpCookie("idclienteC");
             total2S.Value = GridView1.Rows[0].Cells[0].Text;
             total2S.Expires = DateTime.Now.AddDays(30);

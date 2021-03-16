@@ -104,9 +104,22 @@
     <br />
                      </asp:Panel> 
                     <hr class="no-print"/>
+         <asp:Label ID="Label2" runat="server" Text="OBSERVACIONES" Style="font-weight: bold; font-size: 18px;" CssClass="no-print"></asp:Label>    
+         <table style="width: 100%;">
+             <tr>
+                 <td> <asp:Label ID="Label3" runat="server" Text="CENTRO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="CENTRO" id="Nombre" type="text" required runat="server" maxlength="60"  /></td>
+                 <td> <asp:Label ID="Label5" runat="server" Text="NUMERO DE PEDIDO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="NUMERO DE PEDIDO" id="Text1" type="text" required runat="server" maxlength="60" /></td>
+                 <td> <asp:Label ID="Label8" runat="server" Text="NOTA DE ENTREGA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="NOTA DE ENTREGA" id="Text2" type="text" required runat="server" maxlength="60"  /></td>
+             </tr>
+             
+         </table>
+         <hr class="no-print"/>
          
     <div class="fila col10L">
-                <center><asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print"  OnClientClick="javascript:window.print();"  Text="IMPRIMIR"/></center>            
+                <center><asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print"  OnClick="Unnamed1_Click" ID="PrintBut"  Text="IMPRIMIR" UseSubmitBehavior="false"/></center>            
             </div>
                     </div>
             </div>
@@ -125,10 +138,10 @@
                              <asp:BoundField DataField="Codigo" HeaderText="&nbsp;" SortExpression="Codigo"></asp:BoundField>
                              <asp:BoundField DataField="Producto" HeaderText="&nbsp;" SortExpression="Producto"></asp:BoundField>
                              <asp:BoundField DataField="Lote" HeaderText="&nbsp;" SortExpression="Lote"></asp:BoundField>
-                             <asp:BoundField DataField="FechaVenc" HeaderText="&nbsp;" SortExpression="FechaVenc"></asp:BoundField>
+                             <asp:BoundField DataField="FechaVenc" HeaderText="&nbsp;" SortExpression="FechaVenc" DataFormatString="{0:Y}"></asp:BoundField>
                              <asp:BoundField DataField="Cantidad" HeaderText="&nbsp;" SortExpression="Cantidad"></asp:BoundField>
-                             <asp:BoundField DataField="Precio" HeaderText="&nbsp;" SortExpression="Precio"></asp:BoundField>
-                             <asp:BoundField DataField="Precio1" HeaderText="&nbsp;" SortExpression="Precio1"></asp:BoundField>
+                             <asp:BoundField DataField="Precio" HeaderText="&nbsp;" SortExpression="Precio" DataFormatString="{0:F}"></asp:BoundField>
+                             <asp:BoundField DataField="Precio1" HeaderText="&nbsp;" SortExpression="Precio1" DataFormatString="{0:F}"></asp:BoundField>
                          </Columns>
                      </asp:GridView>
                      <asp:SqlDataSource runat="server" ID="SqlDataSource6" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT Producto.Codigo, Producto.Producto, Producto.Lote, Producto.FechaVenc, Lineas.Cantidad, Producto.Precio, Lineas.Precio FROM Lineas LEFT JOIN Producto ON Producto.Producto = Lineas.Producto WHERE iDVenta = @iDVenta;">
@@ -138,6 +151,9 @@
                      </asp:SqlDataSource></div>
         <div class="soloimp" id="tot1"><asp:Label ID="Label24" runat="server" Text="Label" CssClass="soloimp" ></asp:Label></div>
         <div class="soloimp" id="tot2"><asp:Label ID="Label25" runat="server" Text="Label" CssClass="soloimp" ></asp:Label></div>
+        <div class="soloimp" id="centro"><asp:Label ID="Label10" runat="server"  CssClass="soloimp" ></asp:Label></div>
+        <div class="soloimp" id="numpe"><asp:Label ID="Label11" runat="server"  CssClass="soloimp" ></asp:Label></div>
+        <div class="soloimp" id="noten"><asp:Label ID="Label12" runat="server" CssClass="soloimp" ></asp:Label></div>
         <%--<table style="width: 90%;" class="no-print">
              <tr>
                  <td><asp:Label ID="Label2" runat="server" Text="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" CssClass="soloimp"></asp:Label></td>                 
