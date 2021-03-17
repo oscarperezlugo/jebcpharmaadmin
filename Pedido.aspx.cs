@@ -26,6 +26,18 @@ namespace PanelAdmin
             index2S.Value = GUID.ToString();
             index2S.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S);
+            HttpCookie index2S1 = new HttpCookie("obser1C");
+            index2S1.Value = Nombre.Value;
+            index2S1.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(index2S1);
+            HttpCookie index2S2 = new HttpCookie("obser2C");
+            index2S2.Value = Text1.Value;
+            index2S2.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(index2S2);
+            HttpCookie index2S3 = new HttpCookie("obser3C");
+            index2S3.Value = Text2.Value;
+            index2S3.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(index2S3);
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
                 string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo, Status, TipoVenta, Vendedor) VALUES (@FechaVenta, @iDVenta, @Tipo, 'PAGO POR VERIFICAR', @TipoVenta, @Vendedor)";

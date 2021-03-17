@@ -25,19 +25,19 @@ namespace PanelAdmin
             string a = GridView4.Rows[0].Cells[2].Text;
             Label24.Text = string.Format("{0:D2}", a);
             Label25.Text = GridView4.Rows[0].Cells[2].Text;
-            //Label10.Text = "CENTRO " + Nombre.Value + "";
-            //Label11.Text = "NUMERO DE PEDIDO " + Text1.Value + "";
-            //Label12.Text = "NOTA DE ENTREGA " + Text2.Value + "";
+            Label10.Text = "CENTRO " + Request.Cookies["obser1C"].Value + "";
+            Label11.Text = "NUMERO DE PEDIDO " + Request.Cookies["obser2C"].Value + "";
+            Label12.Text = "NOTA DE ENTREGA " + Request.Cookies["obser3C"].Value + "";
         }
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         { 
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            Label10.Text = "CENTRO " + Nombre.Value + "";
-            Label11.Text = "NUMERO DE PEDIDO " + Text1.Value + "";
-            Label12.Text = "NOTA DE ENTREGA " + Text2.Value + "";
-            PrintBut.OnClientClick = "javascript:window.print();";
+            //Label10.Text = "CENTRO " + Nombre.Value + "";
+            //Label11.Text = "NUMERO DE PEDIDO " + Text1.Value + "";
+            //Label12.Text = "NOTA DE ENTREGA " + Text2.Value + "";
+            //PrintBut.OnClientClick = "";
             
             //using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             //{
