@@ -39,7 +39,7 @@
                             </td>
                             <td>
                                 <asp:Label ID="Label3" runat="server" Text="SELECCIONE EL PROCESO" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
-                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" >
+                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" OnSelectedIndexChanged="fijarproceso" AutoPostBack="true" >
                                     <asp:ListItem Value="NOTA DE ENTREGA">NOTA DE ENTREGA</asp:ListItem>
                                     <asp:ListItem Value="PEDIDO">PEDIDO</asp:ListItem>
                                 </asp:DropDownList>
@@ -47,6 +47,27 @@
                         </tr>                        
                     </table>
                         <hr />
+                    <asp:Label ID="Label5" runat="server" Text="OBSERVACIONES" Style="font-weight: bold; font-size: 18px;" CssClass="no-print"></asp:Label>    
+                    <hr class="no-print"/>
+         <table style="width: 100%;">
+             <tr>
+                 <td> <asp:Label ID="Label7" runat="server" Text="CENTRO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="CENTRO" id="Nombre" type="text" required runat="server" maxlength="60"  /></td>
+                 <td> <asp:Label ID="Label8" runat="server" Text="NUMERO DE PEDIDO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="NUMERO DE PEDIDO" id="Text1" type="text" required runat="server" maxlength="60" /></td>
+                 <td> <asp:Label ID="Label9" runat="server" Text="NOTA DE ENTREGA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                     <asp:DropDownList ID="DropDownList5" runat="server" CssClass="formulario" DataSourceID="SqlDataSource3" DataTextField="Row" DataValueField="Row">
+                     </asp:DropDownList>
+                     <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Row] FROM [Cabecera] WHERE ([Tipo] = @Tipo)">
+                         <SelectParameters>
+                             <asp:Parameter DefaultValue="NOTA DE ENTREGA" Name="Tipo" Type="String"></asp:Parameter>
+                         </SelectParameters>
+                     </asp:SqlDataSource>
+                 </td>
+             </tr>
+             
+         </table>
+         <hr class="no-print"/>
             <div class="fila col10L">
                 <asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit"  OnClick="Unnamed1_Click"  Text="SIGUIENTE"/>            
             </div>

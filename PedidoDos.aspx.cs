@@ -65,13 +65,13 @@ namespace PanelAdmin
             
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
-                string saveStaff = "Update Cabecera set Monto = CASE when Monto IS NULL then @Monto  else  Monto + @Monto END where iDVenta = @iDVenta";
+                string saveStaff = "Update Cabecera set Monto = CASE when Monto IS NULL then @Monto  else  Monto + @Monto END, NroOp=@NroOp where iDVenta = @iDVenta";
 
                 using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
                     querySaveStaff.Connection = openCon;
 
-                    
+                    querySaveStaff.Parameters.Add("@NroOp", SqlDbType.Int).Value = Int32.Parse(Request.Cookies["numeropC"].Value);
                     querySaveStaff.Parameters.Add("@Monto", SqlDbType.Money).Value = Decimal.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
                     querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Ejec;
                     try

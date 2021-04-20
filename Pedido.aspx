@@ -39,7 +39,7 @@
                             </td>
                             <td>
                                 <asp:Label ID="Label3" runat="server" Text="SELECCIONE EL PROCESO" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
-                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" >
+                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" OnSelectedIndexChanged="fijarproceso" AutoPostBack="true" >
                                     <asp:ListItem Value="NOTA DE ENTREGA">NOTA DE ENTREGA</asp:ListItem>
                                     <asp:ListItem Value="PEDIDO">PEDIDO</asp:ListItem>
                                 </asp:DropDownList>
@@ -56,7 +56,14 @@
                  <td> <asp:Label ID="Label8" runat="server" Text="NUMERO DE PEDIDO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
                 <input class="formulario no-print" placeholder="NUMERO DE PEDIDO" id="Text1" type="text" required runat="server" maxlength="60" /></td>
                  <td> <asp:Label ID="Label9" runat="server" Text="NOTA DE ENTREGA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                <input class="formulario no-print" placeholder="NOTA DE ENTREGA" id="Text2" type="text" required runat="server" maxlength="60"  /></td>
+                     <asp:DropDownList ID="DropDownList5" runat="server" CssClass="formulario" DataSourceID="SqlDataSource3" DataTextField="Row" DataValueField="Row">
+                     </asp:DropDownList>
+                     <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Row] FROM [Cabecera] WHERE ([Tipo] = @Tipo)">
+                         <SelectParameters>
+                             <asp:Parameter DefaultValue="NOTA DE ENTREGA" Name="Tipo" Type="String"></asp:Parameter>
+                         </SelectParameters>
+                     </asp:SqlDataSource>
+                 </td>
              </tr>
              
          </table>

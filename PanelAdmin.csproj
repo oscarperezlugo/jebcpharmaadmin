@@ -108,10 +108,12 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="ClientesVendedor.aspx" />
+    <Content Include="NotasPedidos.aspx" />
     <Content Include="ConsVentasVend.aspx" />
     <Content Include="ProdEditar.aspx" />
     <Content Include="NominaEditar.aspx" />
     <Content Include="EditarNomina.aspx" />
+    <Content Include="NotaFact.aspx" />
     <Content Include="ProductoEdicion.aspx" />
     <Content Include="ProveedorEditar.aspx" />
     <Content Include="ClienteEditar.aspx" />
@@ -225,6 +227,13 @@
     <Compile Include="ClientesVendedor.aspx.designer.cs">
       <DependentUpon>ClientesVendedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotasPedidos.aspx.cs">
+      <DependentUpon>NotasPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotasPedidos.aspx.designer.cs">
+      <DependentUpon>NotasPedidos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsVentasVend.aspx.cs">
       <DependentUpon>ConsVentasVend.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,6 +261,13 @@
     </Compile>
     <Compile Include="EditarNomina.aspx.designer.cs">
       <DependentUpon>EditarNomina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotaFact.aspx.cs">
+      <DependentUpon>NotaFact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotaFact.aspx.designer.cs">
+      <DependentUpon>NotaFact.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductoEdicion.aspx.cs">
       <DependentUpon>ProductoEdicion.aspx</DependentUpon>

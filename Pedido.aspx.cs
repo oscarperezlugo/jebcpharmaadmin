@@ -35,12 +35,12 @@ namespace PanelAdmin
             index2S2.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S2);
             HttpCookie index2S3 = new HttpCookie("obser3C");
-            index2S3.Value = Text2.Value;
+            index2S3.Value = DropDownList5.SelectedValue;
             index2S3.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S3);
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
-                string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo, Status, TipoVenta, Vendedor) VALUES (@FechaVenta, @iDVenta, @Tipo, 'PAGO POR VERIFICAR', @TipoVenta, @Vendedor)";
+                string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo, Status, TipoVenta, Vendedor, Ref) VALUES (@FechaVenta, @iDVenta, @Tipo, 'PAGO POR VERIFICAR', @TipoVenta, @Vendedor, @Ref)";
 
                 using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
@@ -49,7 +49,8 @@ namespace PanelAdmin
                     querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = GUID;
                     querySaveStaff.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
                     querySaveStaff.Parameters.Add("@TipoVenta", SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
-                    querySaveStaff.Parameters.Add("@Vendedor", SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
+                    querySaveStaff.Parameters.Add("@Vendedor", SqlDbType.VarChar).Value = DropDownList4.SelectedValue;
+                    querySaveStaff.Parameters.Add("@Ref", SqlDbType.Int).Value = Int32.Parse(DropDownList5.SelectedValue);
 
                     try
                     {
@@ -64,6 +65,118 @@ namespace PanelAdmin
                 }
                 Response.Redirect("PedidoDos.aspx");
             }
+        }
+        protected void fijarproceso(object sender, EventArgs e)
+        {
+            string tasa;
+            int valor;
+            if (DropDownList3.SelectedValue == "PEDIDO")
+            {
+                string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+                string query = "select count(status) from Cabecera where tipo = 'PEDIDO' and row > 197";
+
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+
+                    con.Open();
+
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+
+                        if (dr.Read())
+                        {
+                            if (dr.IsDBNull(0))
+                            {
+
+                                tasa = "0";
+                                valor = Int32.Parse(tasa);
+
+                            }
+                            else
+                            {
+                                tasa = dr.GetFieldValue<int>(0).ToString();
+                                valor = Int32.Parse(tasa);
+
+
+                            }
+
+
+                        }
+                        else
+                        {
+                            tasa = "0";
+                            valor = Int32.Parse(tasa) + 2539;
+
+                        }
+
+
+
+                        dr.Close();
+                    }
+
+                    con.Close();
+                }
+                
+            }
+            else 
+            {
+                string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+                string query = "select count(status) from Cabecera where tipo = 'NOTA DE ENTREGA' and row > 197";
+
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+
+                    con.Open();
+
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+
+                        if (dr.Read())
+                        {
+                            if (dr.IsDBNull(0))
+                            {
+
+                                tasa = "0";
+                                valor = Int32.Parse(tasa);
+
+                            }
+                            else
+                            {
+                                tasa = dr.GetFieldValue<int>(0).ToString();
+                                valor = Int32.Parse(tasa);
+
+
+                            }
+
+
+                        }
+                        else
+                        {
+                            tasa = "0";
+                            valor = Int32.Parse(tasa) + 1600;
+
+                        }
+
+
+
+                        dr.Close();
+                    }
+
+                    con.Close();
+                }
+            }
+
+            
+            HttpCookie index2S3r = new HttpCookie("numeropC");
+            index2S3r.Value = valor.ToString();
+            index2S3r.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(index2S3r);
         }
     }
 }

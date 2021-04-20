@@ -104,22 +104,10 @@
     <br />
                      </asp:Panel> 
                     <hr class="no-print"/>
-         <asp:Label ID="Label2" runat="server" Text="OBSERVACIONES" Style="font-weight: bold; font-size: 18px;" CssClass="no-print"></asp:Label>    
-         <table style="width: 100%;">
-             <tr>
-                 <td> <asp:Label ID="Label3" runat="server" Text="CENTRO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                <input class="formulario no-print" placeholder="CENTRO" id="Nombre" type="text" required runat="server" maxlength="60"  /></td>
-                 <td> <asp:Label ID="Label5" runat="server" Text="NUMERO DE PEDIDO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                <input class="formulario no-print" placeholder="NUMERO DE PEDIDO" id="Text1" type="text" required runat="server" maxlength="60" /></td>
-                 <td> <asp:Label ID="Label8" runat="server" Text="NOTA DE ENTREGA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                <input class="formulario no-print" placeholder="NOTA DE ENTREGA" id="Text2" type="text" required runat="server" maxlength="60"  /></td>
-             </tr>
-             
-         </table>
-         <hr class="no-print"/>
+         
          
     <div class="fila col10L">
-                <center><asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print"  OnClick="Unnamed1_Click" ID="PrintBut"  Text="IMPRIMIR" UseSubmitBehavior="false"/></center>            
+                <center><asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print" OnClientClick="javascript:window.print();" ID="PrintBut"  Text="IMPRIMIR" UseSubmitBehavior="false"/></center>            
             </div>
                     </div>
             </div>

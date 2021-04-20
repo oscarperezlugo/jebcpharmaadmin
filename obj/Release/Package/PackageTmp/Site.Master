@@ -103,6 +103,7 @@
                     <li><a href="EditarNomina.aspx">EDITAR NOMINA</a></li> 
                     <li><a href="ClientesVendedor.aspx">CLIENTES X VENDEDOR</a></li> 
                     <li><a href="ConsVentasVend.aspx">VENTAS X VENDEDOR</a></li> 
+                    <li><a href="NotasPedidos.aspx">NOTAS X FACTURA</a></li> 
                 </ul>
             </div>
             <%--<div class="desplegable">
