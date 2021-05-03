@@ -14,21 +14,21 @@
                 <div class="form-row">                        
                     <table style="width: 100%;">
                         <tr>
-                            <td><asp:Label ID="Label1" runat="server" Text="SELECCIONE EL CLIENTE" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />                                
+                            <%--<td><asp:Label ID="Label1" runat="server" Text="SELECCIONE EL CLIENTE" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />                                
                                 <asp:DropDownList ID="DropDownList1" runat="server" CssClass="formulario" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="Nombre"></asp:DropDownList>
                                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Nombre] FROM [Clientes] WHERE ([Tipo] = @Tipo)">
                                     <SelectParameters>
                                         <asp:Parameter DefaultValue="CLIENTE" Name="Tipo" Type="String"></asp:Parameter>
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                            </td> 
+                            </td> --%>
                          <%--</tr> 
                         <tr>--%>
                             <td>
                                 <asp:Label ID="Label2" runat="server" Text="SELECCIONE LA NOTA" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
-                                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="formulario" DataSourceID="SqlDataSource2" DataTextField="Producto" DataValueField="Producto">
+                                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="formulario" DataSourceID="SqlDataSource2" DataTextField="Row" DataValueField="Row" style="width:40%">
                                 </asp:DropDownList>
-                                <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [NroOp] FROM [Cabecera] WHERE ([Tipo] = @Tipo)">
+                                <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Row] FROM [Cabecera] WHERE ([Tipo] = @Tipo)">
                                     <SelectParameters>
                                         <asp:Parameter DefaultValue="NOTA DE ENTREGA" Name="Tipo" Type="String"></asp:Parameter>
                                     </SelectParameters>

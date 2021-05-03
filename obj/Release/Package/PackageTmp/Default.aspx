@@ -16,13 +16,13 @@
                     <table style="width: 100%;">
                         <tr>
                             <td>
-                                <asp:Label ID="Label1" runat="server" Text="GRAFICA: RELACION/CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text="GRAFICA: TIPO CLIENTE/CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="Label2" runat="server" Text="GRAFICA: COBERTURA/CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text="GRAFICA: PRODUCTO/CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="Label3" runat="server" Text="GRAFICA: GENERO/CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text="GRAFICA: PRODUCTO/PORCENTAJE" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -62,13 +62,13 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="Label4" runat="server" Text="GRAFICA: EJECUTIVO/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" Text="GRAFICA: MODALIDAD/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="Label5" runat="server" Text="GRAFICA: COBERTURA/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label5" runat="server" Text="GRAFICA: MODALIDAD/CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="Label7" runat="server" Text="GRAFICA: RELACION/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label7" runat="server" Text="GRAFICA: PRODUCTO/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -148,7 +148,7 @@
                                 <asp:Label ID="Label13" runat="server" Text="GRAFICA: EJECUTIVO/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="Label14" runat="server" Text="GRAFICA: COBERTURA/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                <asp:Label ID="Label14" runat="server" Text="GRAFICA: PRODUCTO/MONTO" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                             </td>                            
                         </tr>                                           
                     </table>
@@ -158,7 +158,7 @@
                     <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource9" AutoGenerateColumns="False" AllowPaging="True" GridLines="None" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black"  CssClass="mGrid" PagerStyle-CssClass="pgr" margin-left="2%" AlternatingRowStyle-CssClass="alt" AllowSorting="True" >
                         <Columns>                            
                             <asp:BoundField DataField="Vendedor" HeaderText="VENDEDOR" SortExpression="Vendedor"></asp:BoundField>
-                            <asp:BoundField DataField="TotalQuantity" HeaderText="INCLUSIONES" SortExpression="TotalQuantity"></asp:BoundField>
+                            <asp:BoundField DataField="TotalQuantity" HeaderText="VENTAS" SortExpression="TotalQuantity"></asp:BoundField>
                             <asp:BoundField DataField="Total" HeaderText="Total $" SortExpression="TOTAL"></asp:BoundField>                            
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -179,7 +179,7 @@
                     <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource10" AutoGenerateColumns="False" AllowPaging="True" GridLines="None" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black"  CssClass="mGrid" PagerStyle-CssClass="pgr" margin-left="2%" AlternatingRowStyle-CssClass="alt" AllowSorting="True" >
                         <Columns>                            
                             <asp:BoundField DataField="Rif" HeaderText="RIF" SortExpression="Rif"></asp:BoundField>
-                            <asp:BoundField DataField="TotalQuantity" HeaderText="TOMADORES" SortExpression="TotalQuantity"></asp:BoundField>
+                            <asp:BoundField DataField="TotalQuantity" HeaderText="CLIENTES" SortExpression="TotalQuantity"></asp:BoundField>
                             <asp:BoundField DataField="Total" HeaderText="Total $" SortExpression="TOTAL"></asp:BoundField>                            
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

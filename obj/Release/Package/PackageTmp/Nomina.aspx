@@ -62,9 +62,10 @@
                     <td><div class="fila col10L">
                         <asp:Label ID="Label12" runat="server" Text="TIPO NOMINA" class="formularioTIT"></asp:Label><br />   
                 <asp:DropDownList ID="DropDownList2" runat="server" CssClass="formulario">
+                    <asp:ListItem>ADMIN</asp:ListItem>
                     <asp:ListItem>VENDEDOR</asp:ListItem>
-                    <asp:ListItem>ALMACEN</asp:ListItem>
-                    <asp:ListItem>ADMINISTRATIVO</asp:ListItem>                    
+                    <asp:ListItem>CONTADOR</asp:ListItem>   
+                    <asp:ListItem>SERVICIO</asp:ListItem>  
                 </asp:DropDownList>         
             </div></td>
                     

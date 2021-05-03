@@ -17,6 +17,15 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            int nota;
+            if (DropDownList5.SelectedValue == "")
+            {
+                nota = 0;
+            }
+            else
+            {
+                nota = Int32.Parse(DropDownList5.SelectedValue);
+            }
             System.Guid GUID = System.Guid.NewGuid();
             HttpCookie indexS = new HttpCookie("clienteC");
             indexS.Value = DropDownList1.SelectedValue;
@@ -50,7 +59,7 @@ namespace PanelAdmin
                     querySaveStaff.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
                     querySaveStaff.Parameters.Add("@TipoVenta", SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
                     querySaveStaff.Parameters.Add("@Vendedor", SqlDbType.VarChar).Value = DropDownList4.SelectedValue;
-                    querySaveStaff.Parameters.Add("@Ref", SqlDbType.Int).Value = Int32.Parse(DropDownList5.SelectedValue);
+                    querySaveStaff.Parameters.Add("@Ref", SqlDbType.Int).Value = nota;
 
                     try
                     {

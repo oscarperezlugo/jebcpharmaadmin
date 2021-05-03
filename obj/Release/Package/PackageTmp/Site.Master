@@ -29,7 +29,8 @@
             </div>            
         </nav>
         <nav class="subnave fijadordos">
-            <label class="fa fa-bars botonsub no-print" for="check"/>                                          
+            <label class="fa fa-bars botonsub no-print" for="check"/>&ensp; 
+            <i class="fas fa-user"></i>&ensp;<asp:Label ID="Label1" runat="server" CssClass="nomlog" for="chek"></asp:Label>
         </nav> 
         <div id="cajacontenedor" class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -43,17 +44,19 @@
                 <ul>
                     <li><a href="Default.aspx">HOME</a></li>
                 </ul>
+                <div class="desplegable" id="bloque5" runat="server">
                 <h3 class="titulomenu">CLIENTES</h3>
                 <ul>
                     <li><a href="Lista.aspx">LISTA</a></li>
                     <li><a href="Cliente.aspx">CREACION</a></li> 
                     <li><a href="EditarUno.aspx">EDITAR CLIENTE</a></li>  
                 </ul>
+                    </div>
                 <%--<h3 class="titulomenu">PROVEEDORES</h3>
                 <ul>                                       
                 </ul>--%>
             </div>
-            <div class="desplegable">
+            <div class="desplegable" id="bloque1" runat="server">
                 <h3 class="titulomenu">VENTAS</h3>
                 <ul>
                     <li><a href="Pedido.aspx">GENERAR NOTA DE ENTREGA</a></li>
@@ -71,7 +74,7 @@
                     <li><a href="Cotizaciones.aspx">LISTA</a></li>                    
                 </ul>
             </div>--%>
-            <div class="desplegable">
+            <div class="desplegable" id="bloque2" runat="server">
                 <h3 class="titulomenu">COMPRAS</h3>
                 <ul>
                     <li><a href="Compra.aspx">ORDEN DE COMPRA</a></li> 
@@ -80,18 +83,19 @@
                     <li><a href="Proveedor.aspx">CREACION PROVEEDORES</a></li> 
                     <li><a href="EditarProv.aspx">EDITAR PROVEEDORES</a></li> 
                     <li><a href="Producto.aspx">CREACION PRODUCTO</a></li>
+                    <li><a href="ProdEditar.aspx">EDICION PRODUCTO</a></li>
                     <li><a href="Categoria.aspx">CREACION CATEGORIA</a></li>
                     <%--<li>EDICION PRODUCTO</li>
                     <li>EDICION CATEGORIA</li>--%>
                 </ul>
             </div>
-            <div class="desplegable">
+            <div class="desplegable" id="bloque3" runat="server">
                 <h3 class="titulomenu">TASA</h3>
                 <ul>
                     <li><a href="Tasa.aspx">ACTUALIZAR TASA</a></li>                    
                 </ul>
             </div>
-            <div class="desplegable">
+            <div class="desplegable" id="bloque4" runat="server">
                 <h3 class="titulomenu">REPORTES</h3>
                 <ul>                    
                     <li><a href="ListaProductos.aspx">EXISTENCIA POR PRODUCTO</a></li>                    

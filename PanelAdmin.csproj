@@ -108,12 +108,15 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="ClientesVendedor.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Login2.aspx" />
     <Content Include="NotasPedidos.aspx" />
     <Content Include="ConsVentasVend.aspx" />
     <Content Include="ProdEditar.aspx" />
     <Content Include="NominaEditar.aspx" />
     <Content Include="EditarNomina.aspx" />
     <Content Include="NotaFact.aspx" />
+    <Content Include="ProductoClienteB.aspx" />
     <Content Include="ProductoEdicion.aspx" />
     <Content Include="ProveedorEditar.aspx" />
     <Content Include="ClienteEditar.aspx" />
@@ -227,6 +230,20 @@
     <Compile Include="ClientesVendedor.aspx.designer.cs">
       <DependentUpon>ClientesVendedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login2.aspx.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login2.aspx.designer.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NotasPedidos.aspx.cs">
       <DependentUpon>NotasPedidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +285,13 @@
     </Compile>
     <Compile Include="NotaFact.aspx.designer.cs">
       <DependentUpon>NotaFact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoClienteB.aspx.cs">
+      <DependentUpon>ProductoClienteB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoClienteB.aspx.designer.cs">
+      <DependentUpon>ProductoClienteB.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductoEdicion.aspx.cs">
       <DependentUpon>ProductoEdicion.aspx</DependentUpon>
