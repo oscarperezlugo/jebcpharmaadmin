@@ -25,7 +25,7 @@ namespace PanelAdmin
             //string direccion = GridView1.Rows[i].Cells[4].Text;
             //string fecha = GridView1.Rows[i].Cells[5].Text;
             //string id = GridView1.Rows[i].Cells[6].Text;
-            HttpCookie nombreS = new HttpCookie("nombreC");
+            HttpCookie nombreS = new HttpCookie("nombreRowC");
             nombreS.Value = nombre;
             nombreS.Expires = DateTime.Now.AddDays(1);
             Response.Cookies.Add(nombreS);

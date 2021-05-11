@@ -16,7 +16,7 @@ namespace PanelAdmin
         {
             if (Request.Cookies["indexC"] != null)
             {
-                Nombre.Value = Request.Cookies["nombreC"].Value;
+                Nombre.Value = Request.Cookies["nombreNomC"].Value;
                 Correo.Value = Request.Cookies["correoC"].Value;
                 Telefono.Value = Request.Cookies["telefonoC"].Value;
                 Dirección.Value = Request.Cookies["direccionC"].Value;
@@ -30,7 +30,7 @@ namespace PanelAdmin
                 //DropDownList4.SelectedValue = Request.Cookies["vendedorC"].Value;
                 //DropDownList2.SelectedValue = Request.Cookies["tipoC"].Value;
                 Text31.Value = Request.Cookies["persC"].Value;
-                Response.Cookies["nombreC"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["nombreNomC"].Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies["correoC"].Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies["telefonoC"].Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies["direccionC"].Expires = DateTime.Now.AddDays(-1);

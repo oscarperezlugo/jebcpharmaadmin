@@ -40,7 +40,7 @@ namespace PanelAdmin
                 //string tel2 = GridView1.Rows[i].Cells[8].Text;
                 //string tipo = GridView1.Rows[i].Cells[9].Text; //
                 string pers = GridView1.Rows[i].Cells[6].Text;  //          
-                HttpCookie nombreS = new HttpCookie("nombreC");
+                HttpCookie nombreS = new HttpCookie("nombreProvC");
                 nombreS.Value = nombre;
                 nombreS.Expires = DateTime.Now.AddDays(1);
                 Response.Cookies.Add(nombreS);

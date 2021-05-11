@@ -41,7 +41,7 @@ namespace PanelAdmin
                 string tipo = GridView1.Rows[i].Cells[9].Text; //
                 string pers = GridView1.Rows[i].Cells[10].Text;  // 
 
-                HttpCookie nombreS = new HttpCookie("nombreC");
+                HttpCookie nombreS = new HttpCookie("nombreCliC");
                 nombreS.Value = nombre;
                 nombreS.Expires = DateTime.Now.AddDays(1);
                 Response.Cookies.Add(nombreS);
@@ -107,7 +107,7 @@ namespace PanelAdmin
                 string tipo = GridView2.Rows[i].Cells[9].Text; //
                 string pers = GridView2.Rows[i].Cells[10].Text;  // 
 
-                HttpCookie nombreS = new HttpCookie("nombreC");
+                HttpCookie nombreS = new HttpCookie("nombreCliC");
                 nombreS.Value = nombre;
                 nombreS.Expires = DateTime.Now.AddDays(1);
                 Response.Cookies.Add(nombreS);

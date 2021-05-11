@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\oscar\OneDrive\Escritorio\JEBADMIN</_PublishTargetUrl>
-    <History>True|2021-04-29T16:12:47.6274176Z;True|2021-04-29T12:12:22.5913361-04:00;True|2021-04-20T11:13:22.3437714-04:00;True|2021-04-20T11:12:34.0329184-04:00;True|2021-03-29T11:24:14.3148706-04:00;True|2021-03-24T13:36:50.6842528-04:00;True|2021-03-24T13:36:21.0261736-04:00;True|2021-03-24T13:34:38.0910106-04:00;True|2021-03-16T16:30:09.9514482-04:00;True|2021-03-16T16:27:55.7799010-04:00;True|2021-03-16T16:24:33.5193163-04:00;True|2021-03-15T11:18:00.0886995-04:00;True|2021-03-15T11:17:33.2421131-04:00;True|2021-03-15T11:17:30.8897541-04:00;True|2021-03-15T11:00:31.5852838-04:00;True|2021-03-15T10:59:00.3183800-04:00;</History>
+    <History>True|2021-05-11T14:04:48.5867647Z;True|2021-05-11T10:02:21.1163947-04:00;True|2021-05-07T11:01:53.5819246-04:00;True|2021-04-29T12:12:47.6274176-04:00;True|2021-04-29T12:12:22.5913361-04:00;True|2021-04-20T11:13:22.3437714-04:00;True|2021-04-20T11:12:34.0329184-04:00;True|2021-03-29T11:24:14.3148706-04:00;True|2021-03-24T13:36:50.6842528-04:00;True|2021-03-24T13:36:21.0261736-04:00;True|2021-03-24T13:34:38.0910106-04:00;True|2021-03-16T16:30:09.9514482-04:00;True|2021-03-16T16:27:55.7799010-04:00;True|2021-03-16T16:24:33.5193163-04:00;True|2021-03-15T11:18:00.0886995-04:00;True|2021-03-15T11:17:33.2421131-04:00;True|2021-03-15T11:17:30.8897541-04:00;True|2021-03-15T11:00:31.5852838-04:00;True|2021-03-15T10:59:00.3183800-04:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="About.aspx">
@@ -51,10 +51,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/27/2020 17:01:31</publishTime>
     </File>
     <File Include="bin/PanelAdmin.dll">
-      <publishTime>04/29/2021 12:12:21</publishTime>
+      <publishTime>05/11/2021 10:02:19</publishTime>
     </File>
     <File Include="bin/PanelAdmin.pdb">
-      <publishTime>04/29/2021 12:12:21</publishTime>
+      <publishTime>05/11/2021 10:02:19</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>10/27/2020 17:01:31</publishTime>
@@ -369,10 +369,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/24/2021 13:33:25</publishTime>
     </File>
     <File Include="NotasPedidos.aspx">
-      <publishTime>03/24/2021 13:31:02</publishTime>
+      <publishTime>04/29/2021 14:06:52</publishTime>
     </File>
     <File Include="Pedido.aspx">
-      <publishTime>03/24/2021 13:03:39</publishTime>
+      <publishTime>04/29/2021 13:53:14</publishTime>
     </File>
     <File Include="PedidoDetalle.aspx">
       <publishTime>02/24/2021 13:28:46</publishTime>
@@ -403,6 +403,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="ProductoCliente.aspx">
       <publishTime>02/18/2021 13:59:10</publishTime>
+    </File>
+    <File Include="ProductoClienteB.aspx">
+      <publishTime>04/29/2021 14:20:19</publishTime>
     </File>
     <File Include="ProductoEdicion.aspx">
       <publishTime>02/26/2021 16:00:50</publishTime>

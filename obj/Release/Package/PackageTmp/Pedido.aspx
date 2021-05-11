@@ -69,7 +69,7 @@
          </table>
          <hr class="no-print"/>
             <div class="fila col10L">
-                <asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit"  OnClick="Unnamed1_Click"  Text="SIGUIENTE"/>            
+                <asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit"  OnClick="Unnamed1_Click"  Text="SIGUIENTE" UseSubmitBehavior="False" />            
             </div>
         </div>
         </div>
