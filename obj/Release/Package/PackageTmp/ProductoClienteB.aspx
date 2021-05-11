@@ -66,6 +66,7 @@
                             
                             <asp:BoundField DataField="FechaVenta" HeaderText="Fecha Venta" SortExpression="FechaVenta" />
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" />
+                            <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row"></asp:BoundField>
                             <asp:BoundField DataField="NroOp" HeaderText="Nro" SortExpression="NroOp"></asp:BoundField>
                             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="DETALLE"></asp:CommandField>
                         </Columns>
@@ -79,7 +80,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [FechaVenta], [Monto], [NroOp] FROM [Cabecera] WHERE ([Tipo] = @Tipo) AND ([Ref] = @Ref)">
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [FechaVenta], [Monto], [NroOp], Row FROM [Cabecera] WHERE ([Tipo] = @Tipo) AND ([Ref] = @Ref)">
                         <SelectParameters>
                             <asp:Parameter DefaultValue="PEDIDO" Name="Tipo" Type="String"></asp:Parameter>
                             <asp:CookieParameter CookieName="notaR" Name="Ref" Type="Int32" />
