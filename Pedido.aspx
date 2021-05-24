@@ -53,16 +53,19 @@
              <tr>
                  <td> <asp:Label ID="Label7" runat="server" Text="CENTRO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
                 <input class="formulario no-print" placeholder="CENTRO" id="Nombre" type="text" required runat="server" maxlength="60"  /></td>
-                 <td> <asp:Label ID="Label8" runat="server" Text="NUMERO DE PEDIDO" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                <input class="formulario no-print" placeholder="NUMERO DE PEDIDO" id="Text1" type="text" required runat="server" maxlength="60" /></td>
+                 <td> <asp:Label ID="Label8" runat="server" Text="NUMERO DE FACTURA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="NUMERO DE FACTURA" id="Text1" type="text" required runat="server" maxlength="60" /></td>
+                 <td> <asp:Label ID="Label10" runat="server" Text="FECHA DE FACTURA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
+                <input class="formulario no-print" placeholder="FECHA FACTURA" id="Text2" type="date" required runat="server" maxlength="60" /></td>
                  <td> <asp:Label ID="Label9" runat="server" Text="NOTA DE ENTREGA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                     <asp:DropDownList ID="DropDownList5" runat="server" CssClass="formulario" DataSourceID="SqlDataSource3" DataTextField="Row" DataValueField="Row">
+                     <input class="formulario no-print" placeholder="NOTA DE ENTREGA" id="Text3" type="text" required runat="server" maxlength="60" />
+                     <%--<asp:DropDownList ID="DropDownList5" runat="server" CssClass="formulario" DataSourceID="SqlDataSource3" DataTextField="Row" DataValueField="Row">
                      </asp:DropDownList>
                      <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Row] FROM [Cabecera] WHERE ([Tipo] = @Tipo)">
                          <SelectParameters>
                              <asp:Parameter DefaultValue="NOTA DE ENTREGA" Name="Tipo" Type="String"></asp:Parameter>
                          </SelectParameters>
-                     </asp:SqlDataSource>
+                     </asp:SqlDataSource>--%>
                  </td>
              </tr>
              

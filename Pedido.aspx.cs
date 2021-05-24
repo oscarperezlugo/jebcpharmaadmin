@@ -17,15 +17,15 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            int nota;
-            if (DropDownList5.SelectedValue == "")
-            {
-                nota = 0;
-            }
-            else
-            {
-                nota = Int32.Parse(DropDownList5.SelectedValue);
-            }
+            //int nota;
+            //if (DropDownList5.SelectedValue == "")
+            //{
+            //    nota = 0;
+            //}
+            //else
+            //{
+            //    nota = Int32.Parse(DropDownList5.SelectedValue);
+            //}
             System.Guid GUID = System.Guid.NewGuid();
             HttpCookie indexS = new HttpCookie("clienteC");
             indexS.Value = DropDownList1.SelectedValue;
@@ -44,9 +44,13 @@ namespace PanelAdmin
             index2S2.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S2);
             HttpCookie index2S3 = new HttpCookie("obser3C");
-            index2S3.Value = DropDownList5.SelectedValue;
+            index2S3.Value = Text3.Value;
             index2S3.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S3);
+            HttpCookie index2S3r = new HttpCookie("numeropC");
+            index2S3r.Value = Text1.Value;
+            index2S3r.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(index2S3r);
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
                 string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo, Status, TipoVenta, Vendedor, Ref) VALUES (@FechaVenta, @iDVenta, @Tipo, 'PAGO POR VERIFICAR', @TipoVenta, @Vendedor, @Ref)";
@@ -54,12 +58,12 @@ namespace PanelAdmin
                 using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
                     querySaveStaff.Connection = openCon;
-                    querySaveStaff.Parameters.Add("@FechaVenta", SqlDbType.DateTime).Value = DateTime.Now;
+                    querySaveStaff.Parameters.Add("@FechaVenta", SqlDbType.DateTime).Value = DateTime.Parse(Text2.Value);
                     querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = GUID;
                     querySaveStaff.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
                     querySaveStaff.Parameters.Add("@TipoVenta", SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
                     querySaveStaff.Parameters.Add("@Vendedor", SqlDbType.VarChar).Value = DropDownList4.SelectedValue;
-                    querySaveStaff.Parameters.Add("@Ref", SqlDbType.Int).Value = nota;
+                    querySaveStaff.Parameters.Add("@Ref", SqlDbType.Int).Value = Text3.Value;
 
                     try
                     {
