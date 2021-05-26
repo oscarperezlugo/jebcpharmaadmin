@@ -112,6 +112,7 @@
     <Content Include="Login2.aspx" />
     <Content Include="NotasPedidos.aspx" />
     <Content Include="ConsVentasVend.aspx" />
+    <Content Include="PedidosEliminar.aspx" />
     <Content Include="ProdEditar.aspx" />
     <Content Include="NominaEditar.aspx" />
     <Content Include="EditarNomina.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="ConsVentasVend.aspx.designer.cs">
       <DependentUpon>ConsVentasVend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosEliminar.aspx.cs">
+      <DependentUpon>PedidosEliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosEliminar.aspx.designer.cs">
+      <DependentUpon>PedidosEliminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProdEditar.aspx.cs">
       <DependentUpon>ProdEditar.aspx</DependentUpon>

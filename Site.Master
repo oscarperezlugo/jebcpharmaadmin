@@ -65,7 +65,7 @@
                     <li><a href="Cotizacion.aspx">COTIZAR</a></li>
                     <li><a href="Cotizaciones.aspx">COTIZACIONES</a></li> 
                     <li><a href="Cobranza.aspx">COBRANZA</a></li>
-                    <%--<li><a href="Delivery.aspx">DESPACHO</a></li>--%>
+                    <li><a href="PedidosEliminar.aspx">ELIMINAR FACTURAS</a></li>
                 </ul>
             </div>
             <%--<div class="desplegable">
