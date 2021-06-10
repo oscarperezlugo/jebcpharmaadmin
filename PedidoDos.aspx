@@ -51,7 +51,7 @@
                                 <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Producto] FROM [Producto]" ></asp:SqlDataSource>
                                   </td>
                             <td><asp:Label ID="Label5" runat="server" CssClass="formularioFinD" ></asp:Label>
-                                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="formularioblockD"   AppendDataBoundItems="true" DataTextField="PrecioD" DataValueField="PrecioD"  AutoPostBack="true">                                
+                                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="formularioblockD"   AppendDataBoundItems="true" DataTextField="Precio" DataValueField="Precio"  AutoPostBack="true">                                
                                 </asp:DropDownList>
                                 </td>
                             <td><asp:TextBox CssClass="formularioProc" placeholder="CANTIDAD" id="Correo" type="number" runat="server" ValidationGroup="ValidateMe"  AutoPostBack="true" OnTextChanged="test" ></asp:TextBox>                                

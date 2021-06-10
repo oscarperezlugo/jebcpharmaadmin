@@ -43,6 +43,7 @@
     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%">
         <Columns>
             <asp:BoundField DataField="Producto" HeaderText="Producto" SortExpression="Producto" />
+            <asp:BoundField DataField="FechaVenc" HeaderText="Vencimiento" SortExpression="FechaVenc" />
             <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
             <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
         </Columns>
@@ -55,7 +56,7 @@
                             <SortedDescendingCellStyle BackColor="#E5E5E5" />
                             <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Producto], [Cantidad], [Precio] FROM [Lineas] WHERE ([iDVenta] = @iDVenta)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT a.Producto, a.Cantidad, a.Precio, CAST(b.FechaVenc AS DATE) AS FechaVEnc  FROM Lineas a join Producto b on a.Producto = b.Producto WHERE (a.iDVenta = @iDVenta)">
         <SelectParameters>
             <asp:CookieParameter CookieName="idventaP" Name="iDVenta" Type="String" />
         </SelectParameters>

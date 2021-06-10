@@ -37,17 +37,17 @@ namespace PanelAdmin
                 string row = GridView1.Rows[i].Cells[4].Text;
                 string rif = GridView1.Rows[i].Cells[5].Text;
                 //string sicm = GridView1.Rows[i].Cells[7].Text;
-                //string tel2 = GridView1.Rows[i].Cells[8].Text;
+                string tel2 = GridView1.Rows[i].Cells[7].Text;
                 //string tipo = GridView1.Rows[i].Cells[9].Text; //
                 string pers = GridView1.Rows[i].Cells[6].Text;  //          
                 HttpCookie nombreS = new HttpCookie("nombreProvC");
                 nombreS.Value = nombre;
                 nombreS.Expires = DateTime.Now.AddDays(1);
                 Response.Cookies.Add(nombreS);
-                //HttpCookie apellidoS = new HttpCookie("tel2C");
-                //apellidoS.Value = tel2;
-                //apellidoS.Expires = DateTime.Now.AddDays(1);
-                //Response.Cookies.Add(apellidoS);
+                HttpCookie apellidoS = new HttpCookie("tel2C");
+                apellidoS.Value = tel2;
+                apellidoS.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Add(apellidoS);
                 HttpCookie correoS = new HttpCookie("correoC");
                 correoS.Value = correo;
                 correoS.Expires = DateTime.Now.AddDays(1);

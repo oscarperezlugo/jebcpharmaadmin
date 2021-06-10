@@ -28,7 +28,8 @@
                             <%--<asp:BoundField DataField="sicm" HeaderText="sicm" SortExpression="sicm" />
                             <asp:BoundField DataField="Telefono2" HeaderText="Telefono2" SortExpression="Telefono2"></asp:BoundField>
                             <asp:BoundField DataField="TipoCliente" HeaderText="TipoCliente" SortExpression="TipoCliente"></asp:BoundField>--%>
-                            <asp:BoundField DataField="Persona" HeaderText="Persona" SortExpression="Persona"></asp:BoundField>
+                            <asp:BoundField DataField="PersonaFinal" HeaderText="Persona" SortExpression="PersonaFinal"></asp:BoundField>
+                            <asp:BoundField DataField="Persona" HeaderText="Telefono 2" SortExpression="Persona"></asp:BoundField>
                             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="ACTUALIZAR"></asp:CommandField>
                         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -41,7 +42,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [sicm], [Telefono2], [TipoCliente], [Persona], [Vendedor] FROM [Clientes] WHERE Tipo = 'PROVEEDOR'"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [sicm], [Telefono2], [TipoCliente], [PersonaFinal], [Vendedor], Persona FROM [Clientes] WHERE Tipo = 'PROVEEDOR'"></asp:SqlDataSource>
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                         <Columns>
@@ -56,7 +57,7 @@
                             <%--<asp:BoundField DataField="sicm" HeaderText="sicm" SortExpression="sicm"></asp:BoundField>
                             <asp:BoundField DataField="Telefono2" HeaderText="Telefono2" SortExpression="Telefono2"></asp:BoundField>
                             <asp:BoundField DataField="TipoCliente" HeaderText="TipoCliente" SortExpression="TipoCliente"></asp:BoundField>--%>
-                            <asp:BoundField DataField="Persona" HeaderText="Persona" SortExpression="Persona"></asp:BoundField>
+                            <asp:BoundField DataField="PersonaFinal" HeaderText="Persona" SortExpression="PersonaFinal"></asp:BoundField>
                             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="ACTUALIZAR"></asp:CommandField>
 
                         </Columns>
@@ -70,7 +71,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [Sueldo], [sicm], [Telefono2], [TipoCliente], [Persona] FROM [Clientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%') AND Tipo='PROVEEDOR'">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [Sueldo], [sicm], [Telefono2], [TipoCliente], [PersonaFinal] FROM [Clientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%') AND Tipo='PROVEEDOR'">
                         <SelectParameters>
                             <asp:CookieParameter CookieName="paramcincoC" Name="Nombre" Type="String"></asp:CookieParameter>
                         </SelectParameters>

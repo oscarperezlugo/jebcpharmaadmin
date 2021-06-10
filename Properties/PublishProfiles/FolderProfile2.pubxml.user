@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\oscar\OneDrive\Escritorio\JEBADMIN</_PublishTargetUrl>
-    <History>True|2021-05-26T17:41:39.6548201Z;True|2021-05-24T09:46:35.9778149-04:00;True|2021-05-24T09:44:42.6496128-04:00;True|2021-05-11T10:04:48.5867647-04:00;True|2021-05-11T10:02:21.1163947-04:00;True|2021-05-07T11:01:53.5819246-04:00;True|2021-04-29T12:12:47.6274176-04:00;True|2021-04-29T12:12:22.5913361-04:00;True|2021-04-20T11:13:22.3437714-04:00;True|2021-04-20T11:12:34.0329184-04:00;True|2021-03-29T11:24:14.3148706-04:00;True|2021-03-24T13:36:50.6842528-04:00;True|2021-03-24T13:36:21.0261736-04:00;True|2021-03-24T13:34:38.0910106-04:00;True|2021-03-16T16:30:09.9514482-04:00;True|2021-03-16T16:27:55.7799010-04:00;True|2021-03-16T16:24:33.5193163-04:00;True|2021-03-15T11:18:00.0886995-04:00;True|2021-03-15T11:17:33.2421131-04:00;True|2021-03-15T11:17:30.8897541-04:00;True|2021-03-15T11:00:31.5852838-04:00;True|2021-03-15T10:59:00.3183800-04:00;</History>
+    <History>True|2021-06-10T15:38:35.1167979Z;True|2021-06-09T13:03:51.5026296-04:00;True|2021-05-26T13:41:39.6548201-04:00;True|2021-05-24T09:46:35.9778149-04:00;True|2021-05-24T09:44:42.6496128-04:00;True|2021-05-11T10:04:48.5867647-04:00;True|2021-05-11T10:02:21.1163947-04:00;True|2021-05-07T11:01:53.5819246-04:00;True|2021-04-29T12:12:47.6274176-04:00;True|2021-04-29T12:12:22.5913361-04:00;True|2021-04-20T11:13:22.3437714-04:00;True|2021-04-20T11:12:34.0329184-04:00;True|2021-03-29T11:24:14.3148706-04:00;True|2021-03-24T13:36:50.6842528-04:00;True|2021-03-24T13:36:21.0261736-04:00;True|2021-03-24T13:34:38.0910106-04:00;True|2021-03-16T16:30:09.9514482-04:00;True|2021-03-16T16:27:55.7799010-04:00;True|2021-03-16T16:24:33.5193163-04:00;True|2021-03-15T11:18:00.0886995-04:00;True|2021-03-15T11:17:33.2421131-04:00;True|2021-03-15T11:17:30.8897541-04:00;True|2021-03-15T11:00:31.5852838-04:00;True|2021-03-15T10:59:00.3183800-04:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="About.aspx">
@@ -51,10 +51,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/27/2020 17:01:31</publishTime>
     </File>
     <File Include="bin/PanelAdmin.dll">
-      <publishTime>05/26/2021 15:19:08</publishTime>
+      <publishTime>06/10/2021 11:39:39</publishTime>
     </File>
     <File Include="bin/PanelAdmin.pdb">
-      <publishTime>05/26/2021 15:19:08</publishTime>
+      <publishTime>06/10/2021 11:39:39</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>10/27/2020 17:01:31</publishTime>
@@ -294,7 +294,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/20/2020 15:25:47</publishTime>
     </File>
     <File Include="Cotizaciones.aspx">
-      <publishTime>11/20/2020 16:45:45</publishTime>
+      <publishTime>06/09/2021 12:35:24</publishTime>
     </File>
     <File Include="CotizacionTotal.aspx">
       <publishTime>03/16/2021 16:18:45</publishTime>
@@ -306,7 +306,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/20/2020 17:00:43</publishTime>
     </File>
     <File Include="EditarNomina.aspx">
-      <publishTime>02/26/2021 12:22:55</publishTime>
+      <publishTime>06/10/2021 11:37:11</publishTime>
     </File>
     <File Include="EditarProv.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -375,16 +375,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/24/2021 10:21:16</publishTime>
     </File>
     <File Include="PedidoDetalle.aspx">
-      <publishTime>02/24/2021 13:28:46</publishTime>
+      <publishTime>06/09/2021 12:20:42</publishTime>
     </File>
     <File Include="PedidoDos.aspx">
       <publishTime>11/20/2020 16:53:06</publishTime>
     </File>
     <File Include="Pedidos.aspx">
-      <publishTime>02/18/2021 14:57:16</publishTime>
+      <publishTime>06/09/2021 12:46:21</publishTime>
     </File>
     <File Include="PedidosEliminar.aspx">
-      <publishTime>05/26/2021 14:03:06</publishTime>
+      <publishTime>06/09/2021 11:37:35</publishTime>
     </File>
     <File Include="PedidoTotal.aspx">
       <publishTime>03/17/2021 10:48:09</publishTime>
@@ -510,7 +510,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/27/2020 17:01:28</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>05/26/2021 13:39:59</publishTime>
+      <publishTime>06/09/2021 13:02:52</publishTime>
     </File>
     <File Include="Tasa.aspx">
       <publishTime>02/08/2021 13:19:13</publishTime>

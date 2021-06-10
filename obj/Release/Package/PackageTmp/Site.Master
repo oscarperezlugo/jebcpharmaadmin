@@ -31,7 +31,7 @@
         <nav class="subnave fijadordos">
             <label class="fa fa-bars botonsub no-print" for="check"></label>&ensp; 
             <i class="fa fa-user"></i>&ensp;<asp:Label ID="Label1" runat="server" CssClass="titulomenu"></asp:Label>
-            <asp:Button Text="CERRAR SESION" runat="server"  CssClass="titulomenu" for="chek" ForeColor="Red" BackColor="Transparent" BorderColor="Transparent" OnClick="Unnamed_Click"></asp:Button>
+            <asp:Button Text="CERRAR SESION" runat="server" CssClass="titulomenu" for="chek" ForeColor="Red" BackColor="Transparent" BorderColor="Transparent" OnClick="Unnamed_Click" UseSubmitBehavior="False"></asp:Button>
         </nav> 
         <div id="cajacontenedor" class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -220,8 +220,16 @@ C:\Users\oscar\source\repos\jebcpharmaadmin\bin\Microsoft.AspNet.FriendlyUrls.xm
 C:\Users\oscar\source\repos\jebcpharmaadmin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\oscar\source\repos\jebcpharmaadmin\bin\es\System.Web.Optimization.resources.dll
 C:\Users\oscar\source\repos\jebcpharmaadmin\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Debug\PanelAdmin.csprojAssemblyReference.cache
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Debug\PanelAdmin.csproj.CoreCompileInputs.cache
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Debug\PanelAdmin.csproj.CopyComplete
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Debug\PanelAdmin.dll
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Debug\PanelAdmin.pdb
+C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Debug\PanelAdmin.csproj.AssemblyReference.cache
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ClosedXML.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\DocumentFormat.OpenXml.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ExcelNumberFormat.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\System.IO.Packaging.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ClosedXML.pdb
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ClosedXML.xml
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\DocumentFormat.OpenXml.xml
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ExcelNumberFormat.xml

@@ -13,65 +13,154 @@ namespace PanelAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.Cookies["Operacion"] != null)
+            {
+                if (GridView2.Rows.Count == 0)
+                {
+                    
+                    GridView2.Attributes.Add("style", "display:none");
+                }
+                else
+                {
+                    GridView1.Attributes.Add("style", "display:none");
+                }
+            }
+            else
+            {
+                GridView2.Attributes.Add("style", "display:none");
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i = GridView1.SelectedIndex;
-            string id = GridView1.Rows[i].Cells[6].Text;
-            string iddos = GridView1.Rows[i].Cells[5].Text;
-
-
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            if (GridView2.Rows.Count == 0)
             {
-                string saveStaff = "Delete from Cabecera where Row=@Row";
 
-                using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
+                int i = GridView1.SelectedIndex;
+                string id = GridView1.Rows[i].Cells[6].Text;
+                string iddos = GridView1.Rows[i].Cells[5].Text;
+
+
+                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
                 {
-                    querySaveStaff.Connection = openCon;
-                    
-                    querySaveStaff.Parameters.Add("@Row", SqlDbType.Int).Value = Int32.Parse(id);
+                    string saveStaff = "Delete from Cabecera where Row=@Row";
 
-                    try
+                    using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                     {
-                        openCon.Open();
-                        querySaveStaff.ExecuteNonQuery();
-                        openCon.Close();
-                        
+                        querySaveStaff.Connection = openCon;
+
+                        querySaveStaff.Parameters.Add("@Row", SqlDbType.Int).Value = Int32.Parse(id);
+
+                        try
+                        {
+                            openCon.Open();
+                            querySaveStaff.ExecuteNonQuery();
+                            openCon.Close();
+
+                        }
+                        catch (SqlException ex)
+                        {
+                            Response.Write("Error" + ex);
+                        }
                     }
-                    catch (SqlException ex)
-                    {
-                        Response.Write("Error" + ex);
-                    }
+
                 }
+                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                {
+                    string saveStaff = "Delete from Lineas where iDVenta=@iDVenta";
 
+                    using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
+                    {
+                        querySaveStaff.Connection = openCon;
+
+                        querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Guid.Parse(iddos);
+
+                        try
+                        {
+                            openCon.Open();
+                            querySaveStaff.ExecuteNonQuery();
+                            openCon.Close();
+                            Page.RegisterStartupScript("LoadFunction", "<script type='text/javascript'>alert('FACTURA ELIMINAR');window.location='PedidosEliminar.aspx'</script>");
+                        }
+                        catch (SqlException ex)
+                        {
+                            Response.Write("Error" + ex);
+                        }
+                    }
+
+                }
             }
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            else
             {
-                string saveStaff = "Delete from Lineas where iDVenta=@iDVenta";
+                int i = GridView2.SelectedIndex;
+                string id = GridView2.Rows[i].Cells[6].Text;
+                string iddos = GridView2.Rows[i].Cells[5].Text;
 
-                using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
+
+                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
                 {
-                    querySaveStaff.Connection = openCon;
+                    string saveStaff = "Delete from Cabecera where Row=@Row";
 
-                    querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Guid.Parse(iddos);
+                    using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
+                    {
+                        querySaveStaff.Connection = openCon;
 
-                    try
-                    {
-                        openCon.Open();
-                        querySaveStaff.ExecuteNonQuery();
-                        openCon.Close();
-                        Page.RegisterStartupScript("LoadFunction", "<script type='text/javascript'>alert('FACTURA ELIMINAR');window.location='PedidosEliminar.aspx'</script>");
+                        querySaveStaff.Parameters.Add("@Row", SqlDbType.Int).Value = Int32.Parse(id);
+
+                        try
+                        {
+                            openCon.Open();
+                            querySaveStaff.ExecuteNonQuery();
+                            openCon.Close();
+
+                        }
+                        catch (SqlException ex)
+                        {
+                            Response.Write("Error" + ex);
+                        }
                     }
-                    catch (SqlException ex)
-                    {
-                        Response.Write("Error" + ex);
-                    }
+
                 }
+                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                {
+                    string saveStaff = "Delete from Lineas where iDVenta=@iDVenta";
 
+                    using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
+                    {
+                        querySaveStaff.Connection = openCon;
+
+                        querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Guid.Parse(iddos);
+
+                        try
+                        {
+                            openCon.Open();
+                            querySaveStaff.ExecuteNonQuery();
+                            openCon.Close();
+                            Page.RegisterStartupScript("LoadFunction", "<script type='text/javascript'>alert('FACTURA ELIMINAR');window.location='PedidosEliminar.aspx'</script>");
+                        }
+                        catch (SqlException ex)
+                        {
+                            Response.Write("Error" + ex);
+                        }
+                    }
+
+                }
             }
+            
 
+
+        }
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+
+           
+            HttpCookie buscarS = new HttpCookie("Operacion");
+            buscarS.Value = Correo.Value;
+            buscarS.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(buscarS);
+            DateTime FECHA = DateTime.Now;
+          
+            Response.Redirect("PedidosEliminar.aspx");
 
         }
     }

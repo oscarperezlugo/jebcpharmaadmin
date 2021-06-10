@@ -57,8 +57,8 @@
                             <td> <div class="fila col10L">
                                 <asp:Label ID="Label10" runat="server" Text="OBSERVACION" class="formularioTIT"></asp:Label><br /> 
                 <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario">
-                    <asp:ListItem>REFRIGERADO</asp:ListItem>
-                    <asp:ListItem>NO REQUIERE REFRIGERACION</asp:ListItem>
+                    <asp:ListItem>NO REFRIGERADO</asp:ListItem>
+                    <asp:ListItem>REFRIGERADO</asp:ListItem>                    
                 </asp:DropDownList>
             </div></td>
                         </tr>  

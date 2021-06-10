@@ -6,7 +6,7 @@
         <div class="card-header">
                 <div class="form-row">
                     <div class="col10L">
-                         <asp:Label ID="Label6" runat="server" Text="NOTA DE ENTREGA" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                         <asp:Label ID="Label6" runat="server" Text="GENERAR FACTURA" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -38,10 +38,9 @@
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <asp:Label ID="Label3" runat="server" Text="SELECCIONE EL PROCESO" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
-                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" OnSelectedIndexChanged="fijarproceso" AutoPostBack="true" >
-                                    <asp:ListItem Value="NOTA DE ENTREGA">NOTA DE ENTREGA</asp:ListItem>
-                                    <asp:ListItem Value="PEDIDO">PEDIDO</asp:ListItem>
+                                <asp:Label ID="Label3" runat="server" Text="PROCESO" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
+                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" OnSelectedIndexChanged="fijarproceso" AutoPostBack="true" disabled>                                    
+                                    <asp:ListItem Value="PEDIDO">FACTURA</asp:ListItem>
                                 </asp:DropDownList>
                                 </td>
                         </tr>                        
@@ -58,14 +57,14 @@
                  <td> <asp:Label ID="Label10" runat="server" Text="FECHA DE FACTURA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
                 <input class="formulario no-print" placeholder="FECHA FACTURA" id="Text2" type="date" required runat="server" maxlength="60" /></td>
                  <td> <asp:Label ID="Label9" runat="server" Text="NOTA DE ENTREGA" class="formularioTIT" CssClass="no-print" Style="font-weight: bold; font-size: 14px;"></asp:Label><br /> 
-                     <input class="formulario no-print" placeholder="NOTA DE ENTREGA" id="Text3" type="text" required runat="server" maxlength="60" />
-                     <%--<asp:DropDownList ID="DropDownList5" runat="server" CssClass="formulario" DataSourceID="SqlDataSource3" DataTextField="Row" DataValueField="Row">
+                     <%--<input class="formulario no-print" placeholder="NOTA DE ENTREGA" id="Text3" type="text" required runat="server" maxlength="60" />--%>
+                     <asp:DropDownList ID="DropDownList5" runat="server" CssClass="formulario" DataSourceID="SqlDataSource3" DataTextField="Row" DataValueField="Row">
                      </asp:DropDownList>
                      <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Row] FROM [Cabecera] WHERE ([Tipo] = @Tipo)">
                          <SelectParameters>
                              <asp:Parameter DefaultValue="NOTA DE ENTREGA" Name="Tipo" Type="String"></asp:Parameter>
                          </SelectParameters>
-                     </asp:SqlDataSource>--%>
+                     </asp:SqlDataSource>
                  </td>
              </tr>
              

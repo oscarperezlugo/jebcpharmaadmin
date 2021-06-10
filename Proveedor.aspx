@@ -45,8 +45,8 @@
                 <input class="formulario" placeholder="Contraseña" id="Contraseña" type="password" required runat="server"/>            
             </div></td>
                             <td><div class="fila col10L">
-                                <asp:Label ID="Label9" runat="server" Text="Repetir Contraseña" class="formularioTIT"></asp:Label><br /> 
-                <input class="formulario" placeholder="Repetir Contraseña" id="Repetir" type="password" required runat="server"/>            
+                                <asp:Label ID="Label9" runat="server" Text="Télefono 2" class="formularioTIT"></asp:Label><br /> 
+                <input class="formulario" placeholder="Télefono (0414555555)" id="Repetir" type="text" maxlenght="11" required runat="server"/>            
             </div></td>
                         </tr>                        
                     </table>

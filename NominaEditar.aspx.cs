@@ -52,7 +52,7 @@ namespace PanelAdmin
             int Row = Int32.Parse(Request.Cookies["rowC"].Value);
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
-                    string saveStaff = "UPDATE Clientes SET Nombre=@Nombre, Correo=@Correo, Telefono=@Telefono, Direccion=@Direccion, Rif=@Rif, Sueldo=@sueldo, Telefono2=@Telefono2, Tipo=@Tipo, Persona=@Persona, Apellido=@Apellido WHERE Row=@Row";
+                    string saveStaff = "UPDATE Clientes SET Nombre=@Nombre, Correo=@Correo, Telefono=@Telefono, Direccion=@Direccion, Rif=@Rif, Sueldo=@sueldo, Telefono2=@Telefono2, Tipo=@Tipo, PersonaFinal=@Persona, Apellido=@Apellido WHERE Row=@Row";
 
                     using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                     {
@@ -66,7 +66,7 @@ namespace PanelAdmin
                         querySaveStaff.Parameters.Add("@sueldo", SqlDbType.Money).Value = Decimal.Parse(Text3.Value.ToString());
                         querySaveStaff.Parameters.Add("@Telefono2", SqlDbType.VarChar).Value = Text41.Value.ToString();
                         querySaveStaff.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = DropDownList2.SelectedValue.ToString();
-                        querySaveStaff.Parameters.Add("@Persona", SqlDbType.VarChar).Value = DropDownList2.SelectedValue.ToString();
+                        querySaveStaff.Parameters.Add("@Persona", SqlDbType.VarChar).Value = Text31.Value.ToString();
                         querySaveStaff.Parameters.Add("@Apellido", SqlDbType.VarChar).Value = Text2.Value.ToString();
                         querySaveStaff.Parameters.Add("@Row", SqlDbType.Int).Value = Row;
                     try
