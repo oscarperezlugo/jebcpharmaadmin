@@ -17,15 +17,18 @@ namespace PanelAdmin
                 {
 
                     GridView2.Attributes.Add("style", "display:none");
+                    Response.Cookies["Operacion"].Expires = DateTime.Now.AddDays(-1);
                 }
                 else
                 {
                     GridView1.Attributes.Add("style", "display:none");
+                    Response.Cookies["Operacion"].Expires = DateTime.Now.AddDays(-1);
                 }
             }
             else
             {
                 GridView2.Attributes.Add("style", "display:none");
+                Response.Cookies["Operacion"].Expires = DateTime.Now.AddDays(-1);
             }
         }
 

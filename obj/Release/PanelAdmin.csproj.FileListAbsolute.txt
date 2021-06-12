@@ -226,3 +226,11 @@ C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Release\PanelAdmin.csproj.CopyCo
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Release\PanelAdmin.dll
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Release\PanelAdmin.pdb
 C:\Users\oscar\source\repos\jebcpharmaadmin\obj\Release\PanelAdmin.csproj.AssemblyReference.cache
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ClosedXML.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\DocumentFormat.OpenXml.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ExcelNumberFormat.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\System.IO.Packaging.dll
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ClosedXML.pdb
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ClosedXML.xml
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\DocumentFormat.OpenXml.xml
+C:\Users\oscar\source\repos\jebcpharmaadmin\bin\ExcelNumberFormat.xml

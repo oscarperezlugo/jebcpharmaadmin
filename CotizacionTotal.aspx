@@ -4,22 +4,27 @@
     <div class="container containerPrint">
         <asp:Panel ID="pnl1" ClientIDMode="Static" CssClass="pnlCSS" runat="server"> 
             <div id="mainpnl">
-    <div class="card">
+    <div class="card printtest">
         <div class="card-header">
                 <div class="form-row">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <div class="col10L">                        
-                        <asp:Label ID="Label6" runat="server" Text="COTIZACION DETALLES" Style="font-weight: bold; font-size: 18px;"></asp:Label>                                                
+                        <asp:Label ID="Label6" runat="server" Text="COTIZACION" Style="font-weight: bold; font-size: 18px;"></asp:Label>  
+                        <asp:Label ID="Label1" runat="server"  Style="font-weight: bold; font-size: 18px; text-align:right;"></asp:Label> 
                     </div>                   
                 </div>
             </div>
         <div class="card-body printbody">
-                <div class="form-row">                       
+                <div class="form-row printtest">                       
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%">
 <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
         <Columns>
             <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo" />
             <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
-            <asp:BoundField DataField="FechaVenta" HeaderText="FechaVenta" SortExpression="FechaVenta" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="FechaVenta" HeaderText="Fecha Cotizacion" SortExpression="FechaVenta" DataFormatString="{0:d}" />
             
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -82,7 +87,7 @@
     <br />
                     <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <Columns>
-                            <asp:BoundField DataField="Row" HeaderText="COTIZACION #" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
+                            <%--<asp:BoundField DataField="Row" HeaderText="COTIZACION #" SortExpression="Row" InsertVisible="False" ReadOnly="True" />--%>
                             <%--<asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />--%>
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:F}">
                                 <ItemStyle ForeColor="#009933"></ItemStyle>

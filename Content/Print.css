@@ -10,6 +10,9 @@
 .printbody{
     font-size:10px;
 }
+.printtest {
+    left: 35px;
+}
 #rsoc {
     position: absolute;
     left: 35px;

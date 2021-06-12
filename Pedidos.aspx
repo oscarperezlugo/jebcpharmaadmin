@@ -11,7 +11,7 @@
             </div>
         <div class="card-body">
                 <div class="form-row">
-      <center><input class="formulario" placeholder="Numero Operacion" id="Correo" type="text" runat="server"/>  
+      <center><input class="formulario" placeholder="Nombre" id="Correo" type="text" runat="server"/>  
                 <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="BUSCAR FACTURA" OnClick="Unnamed1_Click" /></center>
                     <br />
     <c><p><h2></h2></p></c>
@@ -25,11 +25,11 @@
             <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
             <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />
             <asp:BoundField DataField="iDVenta" HeaderText="iDVenta" SortExpression="iDVenta" />
-            <asp:BoundField DataField="Row" HeaderText="#" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
-            <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
+            <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
+        <%--    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             <asp:BoundField DataField="TipoVenta" HeaderText="TipoVenta" SortExpression="TipoVenta" />
             <asp:BoundField DataField="Metodo" HeaderText="Metodo" SortExpression="Metodo" />
-            <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+            <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />--%>
             <asp:BoundField DataField="NroOp" HeaderText="Numero Operacion" SortExpression="NroOp" />
             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="DETALLE" />
         </Columns>
@@ -59,10 +59,10 @@
             <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />
             <asp:BoundField DataField="iDVenta" HeaderText="iDVenta" SortExpression="iDVenta" />
             <asp:BoundField DataField="Row" HeaderText="#" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
-            <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
+           <%-- <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             <asp:BoundField DataField="TipoVenta" HeaderText="TipoVenta" SortExpression="TipoVenta" />
             <asp:BoundField DataField="Metodo" HeaderText="Metodo" SortExpression="Metodo" />
-            <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+            <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />--%>
             <asp:BoundField DataField="NroOp" HeaderText="Numero Operacion" SortExpression="NroOp" />
             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="DETALLE" />
         </Columns>
@@ -76,7 +76,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [iDCliente], [FechaVenta], [Monto], [Lineas], [SubTotal], [iDVenta], [Row], [Status], [TipoVenta], [Metodo], [Direccion], NroOp FROM [Cabecera] WHERE ([Tipo] = @Tipo AND NroOp = @Operacion)">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT a.iDCliente, a.FechaVenta, a.Monto, a.Lineas, a.SubTotal, a.iDVenta, a.Row, a.Status, a.TipoVenta, a.Metodo, a.Direccion, a.NroOp FROM Cabecera a join Clientes b on a.iDCliente = b.iDCliente WHERE a.Tipo = @Tipo AND b.Nombre LIKE '%'+@Operacion+'%'">
                         <SelectParameters>
                             <asp:Parameter DefaultValue="PEDIDO" Name="Tipo" Type="String"></asp:Parameter>                            
                             <asp:CookieParameter CookieName="Operacion" Name="Operacion" Type="String"></asp:CookieParameter>

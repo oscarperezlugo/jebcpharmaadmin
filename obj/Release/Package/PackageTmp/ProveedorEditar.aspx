@@ -42,12 +42,12 @@
             </div></td>
                     <td><div class="fila col10L">
                         <asp:Label ID="Label7" runat="server" Text="PERSONA CONTACTO" class="formularioTIT"></asp:Label><br />   
-                <input class="formulario" placeholder="JUAN PEREZ" id="Text2" type="text" maxlength="11" required runat="server"/>             
+                <input class="formulario" placeholder="JUAN PEREZ" id="Text2" type="text" maxlength="50" required runat="server"/>             
             </div></td>
                     
                     <td><div class="fila col10L">
-                        <asp:Label ID="Label9" runat="server" Text="Confirmar Pass" class="formularioTIT"></asp:Label><br />  
-                <input class="formulario" placeholder="Repetir Contraseña" id="Repetir" type="password"  runat="server"/>            
+                        <asp:Label ID="Label9" runat="server" Text="Telefono 2" class="formularioTIT"></asp:Label><br />  
+                <input class="formulario" placeholder="Télefono (0414555555)" id="Repetir" type="password" maxlenght="11" runat="server"/>            
             </div></td>
                 </tr>
                 <%--<tr>

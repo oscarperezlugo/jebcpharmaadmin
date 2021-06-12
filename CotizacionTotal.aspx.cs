@@ -11,11 +11,47 @@ namespace PanelAdmin
 {
     public partial class CotizacionTotal : System.Web.UI.Page
     {
-        //string VENTA;
+        string VENTA;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //VENTA = Request.Cookies["idventaC"].Value;
-            
+            VENTA = Request.Cookies["idventaC"].Value;
+            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string query = "SELECT Row FROM Cabecera WHERE iDVenta=@Correo";
+
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+
+                cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 50).Value = VENTA;
+                
+
+
+                con.Open();
+
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        int nombre = dr.GetFieldValue<int>(0);
+                        Label1.Text = "     #"+nombre.ToString()+"";
+
+
+
+                    }
+                    else
+                    {
+                       
+
+                    }
+
+                    dr.Close();
+                }
+
+                con.Close();
+            }
+
         }
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         { 

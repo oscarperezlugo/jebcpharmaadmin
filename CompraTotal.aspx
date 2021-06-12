@@ -82,7 +82,7 @@
     <br />
                     <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <Columns>
-                            <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
+                            <asp:BoundField DataField="Row" HeaderText="Numero Orden" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" >
                                 <ItemStyle ForeColor="#009933"></ItemStyle>
