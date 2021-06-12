@@ -4,13 +4,14 @@
     <div class="container containerPrint">
         <asp:Panel ID="pnl1" ClientIDMode="Static" CssClass="pnlCSS" runat="server"> 
             <div id="mainpnl">
+                <br />
+                    <br />
+                    <br />
+                    <br />
     <div class="card printtest">
         <div class="card-header">
                 <div class="form-row">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    
                     <div class="col10L">                        
                         <asp:Label ID="Label6" runat="server" Text="COTIZACION" Style="font-weight: bold; font-size: 18px;"></asp:Label>  
                         <asp:Label ID="Label1" runat="server"  Style="font-weight: bold; font-size: 18px; text-align:right;"></asp:Label> 
@@ -108,6 +109,8 @@
         </SelectParameters>
     </asp:SqlDataSource>
     <br/>
+                    <hr />
+                    <asp:Label ID="Label2" runat="server"  Style="font-weight: bold; font-size: 18px; text-align:right;"></asp:Label>
           
         
                 <hr  class="no-print"/>

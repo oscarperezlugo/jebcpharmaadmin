@@ -5,7 +5,7 @@
         <div class="card-header">
                 <div class="form-row">
                     <div class="col10L">                        
-                        <asp:Label ID="Label6" runat="server" Text="DETALLES DE LA NOTA DE ENTREGA" Style="font-weight: bold; font-size: 18px;"></asp:Label>                                                
+                        <asp:Label ID="Label6" runat="server" Text="DETALLES" Style="font-weight: bold; font-size: 18px;"></asp:Label>                                                
                     </div>                   
                 </div>
             </div>
@@ -105,10 +105,16 @@
     </asp:SqlDataSource>
     <br />
     <div class="fila col10L">
-                <center><asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit"  OnClick="Unnamed1_Click"  Text="ACTUALIZAR STATUS"/></center>            
+                <center><asp:Button class="botonsubmit no-print" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print"  OnClick="Unnamed1_Click"  Text="ACTUALIZAR STATUS"/></center>            
+            </div>
+                    <br />
+                    <div class="fila col10L">
+                <center><asp:Button class="botonsubmit no-print" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print" OnClientClick="javascript:window.print();" ID="PrintBut"  Text="IMPRIMIR" UseSubmitBehavior="false"/></center>            
             </div>
                     </div>
             </div>
         </div>
         </div>
+    
+        
     </asp:Content>

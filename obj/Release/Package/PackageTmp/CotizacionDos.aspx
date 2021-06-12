@@ -39,9 +39,9 @@
                     <table style="width: 100%;">
                         <tr>
                             <td><asp:Label ID="Label1" runat="server" Text="PRODUCTO" Style="font-weight: bold; font-size: 18px;"></asp:Label></td>
-                            <td><asp:Label ID="Label2" runat="server" Text="PRECIO $" Style="font-weight: bold; font-size: 18px;"></asp:Label></td>
+                            <td><asp:Label ID="Label2" runat="server" Text="PRECIO " Style="font-weight: bold; font-size: 18px;"></asp:Label></td>
                             <td><asp:Label ID="Label3" runat="server" Text="CANTIDAD" Style="font-weight: bold; font-size: 18px;"></asp:Label></td>
-                            <td><asp:Label ID="Label4" runat="server" Text="TOTAL $" Style="font-weight: bold; font-size: 18px;"></asp:Label></td>
+                            <td><asp:Label ID="Label4" runat="server" Text="TOTAL " Style="font-weight: bold; font-size: 18px;"></asp:Label></td>
                         </tr>
                         <tr>
                             <td>

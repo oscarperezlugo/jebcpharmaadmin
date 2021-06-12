@@ -21,8 +21,15 @@
                                         <asp:Parameter DefaultValue="CLIENTE" Name="Tipo" Type="String"></asp:Parameter>
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                            </td>                            
-                        </tr>                        
+                            </td>                             
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label2" runat="server" Text="OBSERVACIONES" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
+                                <br />
+                                <input class="formulario no-print" placeholder="Observaciones" id="Nombre" type="text" runat="server" maxlength="120"  />
+                            </td>
+                        </tr>
                     </table>
                         <hr />
             <div class="fila col10L">

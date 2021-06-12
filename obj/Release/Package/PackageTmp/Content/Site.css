@@ -184,7 +184,7 @@ li a{
     .mGrid td {
         padding: 14px;
         color: #717171;
-        text-align: center;
+        text-align: left;
     }
 
     .mGrid th {
@@ -192,7 +192,7 @@ li a{
         color: white;
         background: gray;
         font-size: 0.9em;
-        text-align: center;
+        text-align: left;
         height: 40px;
     }
 
@@ -236,7 +236,7 @@ li a{
     .mGrid2 td {
         padding: 14px;
         color: #717171;
-        text-align: center;
+        text-align: left;
     }
 
     .mGrid2 th {
@@ -244,7 +244,7 @@ li a{
         color: white;
         background: gray;
         font-size: 0.9em;
-        text-align: center;
+        text-align: left;
         height: 40px;
     }
 

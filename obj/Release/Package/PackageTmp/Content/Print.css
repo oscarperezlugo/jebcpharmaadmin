@@ -116,12 +116,12 @@
 .mGrid td {
     padding: 5px;
     color: #717171;
-    text-align: center;
+    text-align: left;
 }
 .mGrid2 td {
     padding: 5px;
     color: #717171;
-    text-align: center;
+    text-align: left;
 }
 .mGrid th {
     display:none;
