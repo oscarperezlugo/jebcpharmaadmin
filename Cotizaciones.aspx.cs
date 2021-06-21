@@ -38,7 +38,7 @@ namespace PanelAdmin
             {
 
                 int i = GridView1.SelectedIndex;
-                string id = GridView1.Rows[i].Cells[5].Text;
+                string id = GridView1.Rows[i].Cells[3].Text;
                 string idcliente = GridView1.Rows[i].Cells[0].Text;
                 HttpCookie idS = new HttpCookie("idventaC");
                 idS.Value = id;
@@ -53,7 +53,7 @@ namespace PanelAdmin
             else
             {
                 int i = GridView2.SelectedIndex;
-                string id = GridView2.Rows[i].Cells[5].Text;
+                string id = GridView2.Rows[i].Cells[3].Text;
                 string idcliente = GridView2.Rows[i].Cells[0].Text;
                 HttpCookie idS = new HttpCookie("idventaC");
                 idS.Value = id;

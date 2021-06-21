@@ -19,7 +19,28 @@
                 </div>
             </div>
         <div class="card-body printbody">
-                <div class="form-row printtest">                       
+                <div class="form-row printtest">   
+                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%">
+        <Columns>
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+            <%--<asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />--%>
+            <asp:BoundField DataField="Rif" HeaderText="Rif" SortExpression="Rif" />
+        </Columns>
+        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="white" Font-Bold="True" ForeColor="black" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CCCCCC" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT distinct [Nombre], [Direccion], [Rif] FROM [Clientes] WHERE ([iDCliente] = @iDCliente)">
+                        <SelectParameters>
+                            <asp:CookieParameter CookieName="idclienteC" Name="iDCliente" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%">
 <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
         <Columns>
@@ -43,33 +64,12 @@
                             <asp:CookieParameter CookieName="idventaC" Name="iDVenta" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <br />
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%">
-        <Columns>
-            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-            <%--<asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />--%>
-            <asp:BoundField DataField="Rif" HeaderText="Rif" SortExpression="Rif" />
-        </Columns>
-        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                            <HeaderStyle BackColor="white" Font-Bold="True" ForeColor="black" />
-                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                            <SelectedRowStyle BackColor="#CCCCCC" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                            <SortedDescendingHeaderStyle BackColor="#242121" />
-    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Direccion], [Rif] FROM [Clientes] WHERE ([iDCliente] = @iDCliente)">
-                        <SelectParameters>
-                            <asp:CookieParameter CookieName="idclienteC" Name="iDCliente" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <br />
-    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%">
+    <br />    
+    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" ShowFooter="true">
         <Columns>
             <asp:BoundField DataField="Producto" HeaderText="Descripcion" SortExpression="Producto" />
             <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
-            <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" DataFormatString="{0:F}"></asp:BoundField>
+            <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" DataFormatString="{0:#,#}"></asp:BoundField>
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                             <HeaderStyle BackColor="white" Font-Bold="True" ForeColor="black" />
@@ -86,15 +86,15 @@
         </SelectParameters>
     </asp:SqlDataSource>
     <br />
-                    <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
+                   <%-- <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" GridLines="None" AllowPaging="True" CssClass="mGrid2" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <Columns>
                             <%--<asp:BoundField DataField="Row" HeaderText="COTIZACION #" SortExpression="Row" InsertVisible="False" ReadOnly="True" />--%>
-                            <%--<asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />--%>
-                            <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:F}">
+                           <%-- <%--<asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />--%>
+                            <%--<asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:#,#}">
                                 <ItemStyle ForeColor="#009933"></ItemStyle>
                             </asp:BoundField>
-        </Columns>
-        <FooterStyle BackColor="#CCCC99" ForeColor="Black"/>
+        </Columns>--%>
+        <%--<FooterStyle BackColor="#CCCC99" ForeColor="Black"/>
                             <HeaderStyle BackColor="white" Font-Bold="True" ForeColor="black"/>
                             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right"/>
                             <SelectedRowStyle BackColor="#CCCCCC" Font-Bold="True" ForeColor="White"/>
@@ -102,15 +102,15 @@
                             <SortedAscendingHeaderStyle BackColor="#4B4B4B"/>
                             <SortedDescendingCellStyle BackColor="#E5E5E5"/>
                             <SortedDescendingHeaderStyle BackColor="#242121"/>
-    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Row], [Lineas], [Monto] FROM [Cabecera] WHERE ([iDVenta] = @iDVenta)">
+    </asp:GridView>--%>
+                   <%-- <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Row], [Lineas], [Monto] FROM [Cabecera] WHERE ([iDVenta] = @iDVenta)">
                         <SelectParameters>
                             <asp:CookieParameter CookieName="idventaC" Name="iDVenta" Type="String"/>
-        </SelectParameters>
-    </asp:SqlDataSource>
+        </SelectParameters>--%>
+   <%-- </asp:SqlDataSource>--%>
     <br/>
                     <hr />
-                    <asp:Label ID="Label2" runat="server"  Style="font-weight: bold; font-size: 18px; text-align:right;"></asp:Label>
+                    <asp:Label ID="Label2" runat="server"  Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
           
         
                 <hr  class="no-print"/>

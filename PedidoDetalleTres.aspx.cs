@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace PanelAdmin
 {
-    public partial class PedidoDetalle : System.Web.UI.Page
+    public partial class PedidoDetalleTres : System.Web.UI.Page
     {
         string VENTA;
         protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace PanelAdmin
                         string nombre = dr.GetFieldValue<Int32>(0).ToString();
                         string monto = dr.GetFieldValue<Decimal>(1).ToString("#,#");
                         string montod = dr.GetFieldValue<Decimal>(2).ToString("#,#");
-                        Label6.Text = "NOTA DE ENTREGA # "+nombre+"";
+                        Label6.Text = "FACTURA "+nombre+"";
                         GridView2.FooterRow.Cells[3].Text = monto;
                         GridView2.FooterRow.Cells[2].Text = "TOTAL:";              
                         GridView2.FooterRow.Cells[1].Text = "TOTAL GENERAL $: "+montod+"";

@@ -22,8 +22,8 @@
             <asp:BoundField DataField="iDCliente" HeaderText="iDCliente" SortExpression="iDCliente" />
             <asp:BoundField DataField="FechaVenta" HeaderText="FechaVenta" SortExpression="FechaVenta" />
             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" />
-            <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
-            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />
+        <%--    <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
+            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />--%>
             <asp:BoundField DataField="iDVenta" HeaderText="iDVenta" SortExpression="iDVenta" />
             <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
         <%--    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
@@ -55,8 +55,8 @@
             <asp:BoundField DataField="iDCliente" HeaderText="iDCliente" SortExpression="iDCliente" />
             <asp:BoundField DataField="FechaVenta" HeaderText="FechaVenta" SortExpression="FechaVenta" />
             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" />
-            <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
-            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />
+<%--            <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
+            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />--%>
             <asp:BoundField DataField="iDVenta" HeaderText="iDVenta" SortExpression="iDVenta" />
             <asp:BoundField DataField="Row" HeaderText="#" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
            <%-- <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />

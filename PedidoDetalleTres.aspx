@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PedidoDetalle.aspx.cs" Inherits="PanelAdmin.PedidoDetalle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PedidoDetalleTres.aspx.cs" Inherits="PanelAdmin.PedidoDetalleTres" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">   
      <div class="container">
           <br />

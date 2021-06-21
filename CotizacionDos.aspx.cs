@@ -9,8 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace PanelAdmin
 {
+    
     public partial class CotizacionDos : System.Web.UI.Page
     {
+        decimal PrecioDol;
         protected void Page_Load(object sender, EventArgs e)
         {
             DropDownList2.Attributes.Add("style", "display:none");
@@ -22,12 +24,21 @@ namespace PanelAdmin
         {
             DropDownList2.Items.Clear();
             SqlConnection con = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma");
-            SqlCommand cmd = new SqlCommand("select Precio from Producto where Producto = '" + DropDownList1.SelectedValue + "'", con);
+            SqlCommand cmd = new SqlCommand("select Precio, PrecioD from Producto where Producto = '" + DropDownList1.SelectedValue + "'", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
+            DataSet ds1 = new DataSet();
+
+            sda.Fill(ds1);
             sda.Fill(dt);
+            
             DropDownList2.DataSource = dt;
             DropDownList2.DataBind();
+            PrecioDol = Decimal.Parse(ds1.Tables[0].Rows[0]["PrecioD"].ToString());
+            HttpCookie indexS1 = new HttpCookie("minC");
+            indexS1.Value = PrecioDol.ToString();
+            indexS1.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(indexS1);
             Label5.Text = DropDownList2.SelectedValue;
             
         }
@@ -90,13 +101,13 @@ namespace PanelAdmin
             }
             using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
             {
-                string saveStaff = "Update Cabecera set Monto = CASE when Monto IS NULL then @Monto  else  Monto + @Monto END where iDVenta = @iDVenta";
+                string saveStaff = "Update Cabecera set Monto = CASE when Monto IS NULL then @Monto  else  Monto + @Monto END, MontoD = CASE when MontoD IS NULL then @MontoD  else  MontoD + @MontoD  END where iDVenta = @iDVenta";
 
                 using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
                     querySaveStaff.Connection = openCon;
 
-
+                    querySaveStaff.Parameters.Add("@MontoD", SqlDbType.Money).Value = Decimal.Parse(Request.Cookies["minC"].Value) * Int32.Parse(Correo.Text);
                     querySaveStaff.Parameters.Add("@Monto", SqlDbType.Money).Value = Decimal.Parse(DropDownList2.SelectedValue) * Int32.Parse(Correo.Text);
                     querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = Guid.Parse(Ejec);
                     try

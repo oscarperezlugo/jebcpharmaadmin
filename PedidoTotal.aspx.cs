@@ -25,9 +25,73 @@ namespace PanelAdmin
             string a = GridView4.Rows[0].Cells[2].Text;
             Label24.Text = string.Format("{0:D2}", a);
             Label25.Text = GridView4.Rows[0].Cells[2].Text;
-            Label10.Text = "CENTRO " + Request.Cookies["obser1C"].Value + "";
-            Label11.Text = "NUMERO DE PEDIDO " + Request.Cookies["obser2C"].Value + "";
-            Label12.Text = "NOTA DE ENTREGA " + Request.Cookies["obser3C"].Value + "";
+            if (Request.Cookies["obser1C"] == null)
+            {
+
+            }
+            else
+            {
+                Label10.Text = "CENTRO " + Request.Cookies["obser1C"].Value + "";
+            }
+            if (Request.Cookies["obser2C"] == null)
+            {
+
+            }
+            else
+            {
+                Label10.Text = "NUMERO DE PEDIDO " + Request.Cookies["obser2C"].Value + "";
+            }
+            if (Request.Cookies["obser3C"] == null)
+            {
+
+            }
+            else
+            {
+                Label10.Text = "NOTA DE ENTREGA " + Request.Cookies["obser3C"].Value + "";
+            }
+            VENTA = Request.Cookies["idventaC"].Value;
+            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string query = "SELECT Row, Monto, MontoD FROM Cabecera WHERE iDVenta=@Correo";
+
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+
+                cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Guid.Parse(VENTA).ToString();
+
+
+
+                con.Open();
+
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        int nombre = dr.GetFieldValue<int>(0);
+                        //Label1.Text = " " + nombre.ToString() + "";
+                        string monto = dr.GetFieldValue<Decimal>(1).ToString("#,#");
+                        string montod = dr.GetFieldValue<Decimal>(2).ToString("#,#");
+                        GridView3.FooterRow.Cells[2].Text = monto;
+                        GridView3.FooterRow.Cells[1].Text = "TOTAL:";
+                        GridView3.FooterRow.Cells[0].Text = "TOTAL GENERAL $: " + montod + "";
+
+
+
+                    }
+                    else
+                    {
+
+
+                    }
+
+                    dr.Close();
+                }
+
+                con.Close();
+            }
+
         }
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         { 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CotizacionTotal.aspx.cs" Inherits="PanelAdmin.CotizacionTotal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NotaTotal.aspx.cs" Inherits="PanelAdmin.NotaTotal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">   
     
     <div class="container containerPrint">
@@ -13,7 +13,7 @@
                 <div class="form-row">
                     
                     <div class="col10L">                        
-                        <asp:Label ID="Label6" runat="server" Text="COTIZACION" Style="font-weight: bold; font-size: 18px;"></asp:Label>  
+                        <asp:Label ID="Label6" runat="server" Text="NOTA DE ENTREGA" Style="font-weight: bold; font-size: 18px;"></asp:Label>  
                         <asp:Label ID="Label1" runat="server"  Style="font-weight: bold; font-size: 18px; text-align:right;"></asp:Label> 
                     </div>                   
                 </div>
@@ -110,7 +110,33 @@
    <%-- </asp:SqlDataSource>--%>
     <br/>
                     <hr />
-                    <asp:Label ID="Label2" runat="server"  Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                    <table style="width:100%">
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label2" runat="server" text="ENTREGADO POR:" Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="Label3" runat="server" text="RECIBIDO POR:" Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label4" runat="server" text="NOMBRE:" Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="Label5" runat="server" text="NOMBRE:" Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label7" runat="server" text="C.I:" Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="Label8" runat="server" text="C.I:" Style="font-weight: bold; font-size: 12px; text-align:right;"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                    
           
         
                 <hr  class="no-print"/>

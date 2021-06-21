@@ -17,8 +17,7 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            if (Contraseña.Value.ToString() == Repetir.Value.ToString())
-            {
+            
 
                 using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
                 {
@@ -56,11 +55,7 @@ namespace PanelAdmin
                     }
                 }
 
-            }
-            else
-            {
-                Response.Write("<script>alert('LAS CONTRASEÑAS NO COINCIDEN')</script>");
-            }
+            
         }
     }
 }

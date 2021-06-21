@@ -16,7 +16,7 @@
                         <tr>
                             <td><div class="fila col10L">
                                 <asp:Label ID="Label1" runat="server" Text="Nombre de la Categoria" class="formularioTIT"></asp:Label><br /> 
-                <input class="formulario" placeholder="Nombre de la Categoria" id="Nombre" type="text" required runat="server" maxlength="15"/>            
+                <input class="formulario" placeholder="Nombre de la Categoria" id="Nombre" type="text" required runat="server" maxlength="49"/>            
             </div>  </td>
                             <td><div class="fila col10L">
                                 <asp:Label ID="Label2" runat="server" Text="Imagen de la Categoria" class="formularioTIT"></asp:Label><br />

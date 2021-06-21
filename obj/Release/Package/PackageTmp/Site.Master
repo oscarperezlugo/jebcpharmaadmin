@@ -60,14 +60,14 @@
             <div class="desplegable" id="bloque1" runat="server">
                 <h3 class="titulomenu">VENTAS</h3>
                 <ul>
-                    <li><a href="PedidoNota.aspx">GENERAR NOTA DE ENTREGA</a></li>
-                    <li><a href="Pedido.aspx">GENERAR FACTURA</a></li>
-                    <li><a href="PedidosNota.aspx">NOTAS DE ENTREGA</a></li>
-                    <li><a href="Pedidos.aspx">FACTURAS</a></li>
                     <li><a href="Cotizacion.aspx">COTIZAR</a></li>
                     <li><a href="Cotizaciones.aspx">COTIZACIONES</a></li> 
+                    <li><a href="PedidoNota.aspx">GENERAR NOTA DE ENTREGA</a></li>
+                    <li><a href="PedidosNota.aspx">NOTAS DE ENTREGA</a></li>
+                    <li><a href="Pedido.aspx">GENERAR FACTURAS</a></li>                    
+                    <li><a href="Pedidos.aspx">FACTURAS</a></li>                                        
                     <li><a href="Cobranza.aspx">COBRANZA</a></li>
-                    <li><a href="PedidosEliminar.aspx">ELIMINAR FACTURAS</a></li>
+                    <li><a href="PedidosEliminar.aspx">ANULAR FACTURAS</a></li>
                 </ul>
             </div>
             <%--<div class="desplegable">

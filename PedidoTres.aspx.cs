@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace PanelAdmin
 {
-    public partial class PedidoDos : System.Web.UI.Page
+    public partial class PedidoTres : System.Web.UI.Page
     {
         Guid Ejec;
         decimal PrecioDol;
@@ -141,7 +141,7 @@ namespace PanelAdmin
                         Response.Write("Error" + ex);
                     }
                 }
-                Response.Redirect("PedidoTotal.aspx");
+                Response.Redirect("NotaTotal.aspx");
             }
         }
     }

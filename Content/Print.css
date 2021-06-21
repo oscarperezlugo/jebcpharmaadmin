@@ -124,7 +124,7 @@
     text-align: left;
 }
 .mGrid th {
-    display:none;
+    /*display:none;*/
 }
 /*.mGrid2 th {
     display: none;

@@ -9,19 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace PanelAdmin
 {
-    public partial class CotizacionTotal : System.Web.UI.Page
+    public partial class NotaTotal : System.Web.UI.Page
     {
         string VENTA;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["observC"] == null)
-            {
-                
-            }
-            else
-            {
-                Label2.Text = "OBSERVACIONES: " + Request.Cookies["observC"].Value + "";
-            }
+            
            
             VENTA = Request.Cookies["idventaC"].Value;
             string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";

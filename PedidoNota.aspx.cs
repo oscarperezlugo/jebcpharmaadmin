@@ -129,7 +129,7 @@ namespace PanelAdmin
                         Response.Write("Error" + ex);
                     }
                 }
-                Response.Redirect("PedidoDos.aspx");
+                Response.Redirect("PedidoTres.aspx");
             }
         }
         protected void fijarproceso(object sender, EventArgs e)

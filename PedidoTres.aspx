@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CotizacionDos.aspx.cs" Inherits="PanelAdmin.CotizacionDos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PedidoTres.aspx.cs" Inherits="PanelAdmin.PedidoTres" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="baseform">
          <div class="container">
@@ -6,7 +6,7 @@
         <div class="card-header">
                 <div class="form-row">
                     <div class="col10L">
-                         <asp:Label ID="Label6" runat="server" Text="COTIZAR" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                         <asp:Label ID="Label6" runat="server" Text="AGREGAR" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                     </div>
                 </div>
             </div>

@@ -9,21 +9,21 @@ using System.Web.UI.WebControls;
 
 namespace PanelAdmin
 {
-    public partial class PedidoDetalle : System.Web.UI.Page
+    public partial class PedidoDetalleDos : System.Web.UI.Page
     {
         string VENTA;
         protected void Page_Load(object sender, EventArgs e)
         {
             VENTA = Request.Cookies["idventaP"].Value;
             string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
-            string query = "SELECT Row, Monto, MontoD FROM Cabecera WHERE iDVenta=@Correo";
+            string query = "SELECT NroOp FROM Cabecera WHERE iDVenta=@Correo";
 
 
             using (SqlConnection con = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
 
-                cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 50).Value = VENTA;
+                cmd.Parameters.Add("@Correo", SqlDbType.UniqueIdentifier).Value = Guid.Parse(VENTA);
                
 
 
@@ -35,17 +35,12 @@ namespace PanelAdmin
                     if (dr.Read())
                     {
                         string nombre = dr.GetFieldValue<Int32>(0).ToString();
-                        string monto = dr.GetFieldValue<Decimal>(1).ToString("#,#");
-                        string montod = dr.GetFieldValue<Decimal>(2).ToString("#,#");
-                        Label6.Text = "NOTA DE ENTREGA # "+nombre+"";
-                        GridView2.FooterRow.Cells[3].Text = monto;
-                        GridView2.FooterRow.Cells[2].Text = "TOTAL:";              
-                        GridView2.FooterRow.Cells[1].Text = "TOTAL GENERAL $: "+montod+"";
+                        Label6.Text = "OPERACION # "+nombre+"";
 
 
 
 
-
+                        
 
 
 

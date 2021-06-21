@@ -126,10 +126,14 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="ClientesVendedor.aspx" />
+    <Content Include="NotaTotal.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Login2.aspx" />
     <Content Include="NotasPedidos.aspx" />
     <Content Include="ConsVentasVend.aspx" />
+    <Content Include="PedidoDetalleTres.aspx" />
+    <Content Include="PedidoDetalleDos.aspx" />
+    <Content Include="PedidoTres.aspx" />
     <Content Include="PedidoNota.aspx" />
     <Content Include="PedidosNota.aspx" />
     <Content Include="PedidosEliminar.aspx" />
@@ -251,6 +255,13 @@
     <Compile Include="ClientesVendedor.aspx.designer.cs">
       <DependentUpon>ClientesVendedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotaTotal.aspx.cs">
+      <DependentUpon>NotaTotal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotaTotal.aspx.designer.cs">
+      <DependentUpon>NotaTotal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,6 +289,27 @@
     </Compile>
     <Compile Include="ConsVentasVend.aspx.designer.cs">
       <DependentUpon>ConsVentasVend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoDetalleTres.aspx.cs">
+      <DependentUpon>PedidoDetalleTres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoDetalleTres.aspx.designer.cs">
+      <DependentUpon>PedidoDetalleTres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoDetalleDos.aspx.cs">
+      <DependentUpon>PedidoDetalleDos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoDetalleDos.aspx.designer.cs">
+      <DependentUpon>PedidoDetalleDos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoTres.aspx.cs">
+      <DependentUpon>PedidoTres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoTres.aspx.designer.cs">
+      <DependentUpon>PedidoTres.aspx</DependentUpon>
     </Compile>
     <Compile Include="PedidoNota.aspx.cs">
       <DependentUpon>PedidoNota.aspx</DependentUpon>
