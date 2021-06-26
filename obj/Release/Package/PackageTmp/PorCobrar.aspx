@@ -19,14 +19,14 @@
             <asp:BoundField DataField="iDCliente" HeaderText="iDCliente" SortExpression="iDCliente" />
             <asp:BoundField DataField="FechaVenta" HeaderText="FechaVenta" SortExpression="FechaVenta" />
             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" />
-            <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
-            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />
+ <%--           <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
+            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" SortExpression="SubTotal" />--%>
             <asp:BoundField DataField="iDVenta" HeaderText="iDVenta" SortExpression="iDVenta" />
             <asp:BoundField DataField="Row" HeaderText="#" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
             <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-            <asp:BoundField DataField="TipoVenta" HeaderText="TipoVenta" SortExpression="TipoVenta" />
-            <asp:BoundField DataField="Metodo" HeaderText="Metodo" SortExpression="Metodo" />
-            <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+   <%--         <asp:BoundField DataField="TipoVenta" HeaderText="TipoVenta" SortExpression="TipoVenta" />
+            <asp:BoundField DataField="Metodo" HeaderText="Metodo" SortExpression="Metodo" />--%>
+            <asp:BoundField DataField="NroOp" HeaderText="Factura" SortExpression="NroOp" />
             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="DETALLE" />
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -39,7 +39,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [iDCliente], [FechaVenta], [Monto], [Lineas], [SubTotal], [iDVenta], [Row], [Status], [TipoVenta], [Metodo], [Direccion] FROM [Cabecera] WHERE (([Tipo] = @Tipo) OR ([Tipo] = @Tipo2)) AND Status != 'FINALIZADO'">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [iDCliente], [FechaVenta], [Monto], [Lineas], [SubTotal], [iDVenta], [Row], [Status], [TipoVenta], [Metodo], [Direccion], NroOp FROM [Cabecera] WHERE (([Tipo] = @Tipo) OR ([Tipo] = @Tipo2)) AND Status != 'FINALIZADO'">
                         <SelectParameters>
                             <asp:Parameter DefaultValue="PEDIDO" Name="Tipo" Type="String"></asp:Parameter>
                             <asp:Parameter DefaultValue="NOTA DE ENTREGA" Name="Tipo2" Type="String"></asp:Parameter>

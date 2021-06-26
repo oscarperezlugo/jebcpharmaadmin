@@ -41,7 +41,7 @@ namespace PanelAdmin
                 string iddos = GridView1.Rows[i].Cells[5].Text;
 
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "Delete from Cabecera where Row=@Row";
 
@@ -65,7 +65,7 @@ namespace PanelAdmin
                     }
 
                 }
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "Delete from Lineas where iDVenta=@iDVenta";
 
@@ -97,7 +97,7 @@ namespace PanelAdmin
                 string iddos = GridView2.Rows[i].Cells[5].Text;
 
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "Delete from Cabecera where Row=@Row";
 
@@ -121,7 +121,7 @@ namespace PanelAdmin
                     }
 
                 }
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "Delete from Lineas where iDVenta=@iDVenta";
 

@@ -19,9 +19,9 @@ namespace PanelAdmin
         {
             
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
-                    string saveStaff = "INSERT into Clientes (Nombre, Correo, Telefono, Direccion, FechaRegistro, Contrasena, iDCliente, Rif, Tipo, sicm, Telefono2, TipoCliente, Persona, DireccionEntF, Vendedor) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @FechaRegistro, @Contrasena, @iDCliente, @Rif, 'CLIENTE', @sicm, @Telefono2, @TipoCliente, @Persona, @DireccionEntF, @Vendedor)";
+                    string saveStaff = "INSERT into Clientes (Nombre, Correo, Telefono, Direccion, FechaRegistro, Contrasena, iDCliente, Rif, Tipo, sicm, Telefono2, TipoCliente, PersonaFinal, DireccionEntF, Vendedor) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @FechaRegistro, @Contrasena, @iDCliente, @Rif, 'CLIENTE', @sicm, @Telefono2, @TipoCliente, @PersonaFinal, @DireccionEntF, @Vendedor)";
 
                     using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                     {
@@ -38,8 +38,8 @@ namespace PanelAdmin
                         querySaveStaff.Parameters.Add("@sicm", SqlDbType.VarChar).Value = Text2.Value.ToString();
                         querySaveStaff.Parameters.Add("@iDCliente", SqlDbType.UniqueIdentifier).Value = System.Guid.NewGuid();
                         querySaveStaff.Parameters.Add("@Telefono2", SqlDbType.VarChar).Value = Text41.Value.ToString();
-                        querySaveStaff.Parameters.Add("@TipoCliente", SqlDbType.VarChar).Value = Text31.Value.ToString();
-                        querySaveStaff.Parameters.Add("@Persona", SqlDbType.VarChar).Value = DropDownList2.SelectedValue.ToString();
+                        querySaveStaff.Parameters.Add("@TipoCliente", SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
+                        querySaveStaff.Parameters.Add("@PersonaFinal", SqlDbType.VarChar).Value = Text31.Value;
                         querySaveStaff.Parameters.Add("@Vendedor", SqlDbType.VarChar).Value = DropDownList4.SelectedValue.ToString();
                         try
                         {

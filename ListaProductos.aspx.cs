@@ -1,5 +1,9 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -69,6 +73,81 @@ namespace PanelAdmin
             buscarS.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(buscarS);
             Response.Redirect("ListaProductos.aspx");
+        }
+        protected void descarga1(object sender, EventArgs e)
+        {
+            string connectionString2 = Conection.ConexLine;
+            string query2 = "SELECT Producto, Precio, PrecioD, Lote, FechaVenc, Codigo, Cantidad FROM Producto";
+
+
+            using (SqlConnection con2 = new SqlConnection(connectionString2))
+            using (SqlCommand cmd2 = new SqlCommand(query2, con2))
+            using (SqlDataAdapter sda2 = new SqlDataAdapter())
+            using (DataTable dt2 = new DataTable())
+            {
+
+
+                sda2.SelectCommand = cmd2;
+                sda2.Fill(dt2);
+                con2.Open();
+
+
+                using (SqlDataReader dr2 = cmd2.ExecuteReader())
+                {
+
+                    if (dr2.Read())
+                    {
+                        if (dr2.IsDBNull(0))
+                        {
+
+
+
+                        }
+                        else
+                        {
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dt2, "Reporte");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=ReporteProductos.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+
+
+
+
+
+                        }
+
+
+                    }
+                    else
+                    {
+
+
+
+                    }
+
+
+
+                    dr2.Close();
+                }
+
+                con2.Close();
+            }
+
+
+
         }
     }
 }

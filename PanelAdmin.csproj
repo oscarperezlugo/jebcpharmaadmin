@@ -131,12 +131,17 @@
     <Content Include="Login2.aspx" />
     <Content Include="NotasPedidos.aspx" />
     <Content Include="ConsVentasVend.aspx" />
+    <Content Include="ReciboDetalle.aspx" />
+    <Content Include="PedidoDetalleCuatro.aspx" />
     <Content Include="PedidoDetalleTres.aspx" />
     <Content Include="PedidoDetalleDos.aspx" />
+    <Content Include="PedidoCuatro.aspx" />
     <Content Include="PedidoTres.aspx" />
     <Content Include="PedidoNota.aspx" />
     <Content Include="PedidosNota.aspx" />
     <Content Include="PedidosEliminar.aspx" />
+    <Content Include="PorPagarDos.aspx" />
+    <Content Include="PorPagar.aspx" />
     <Content Include="ProdEditar.aspx" />
     <Content Include="NominaEditar.aspx" />
     <Content Include="EditarNomina.aspx" />
@@ -255,6 +260,7 @@
     <Compile Include="ClientesVendedor.aspx.designer.cs">
       <DependentUpon>ClientesVendedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Conection.cs" />
     <Compile Include="NotaTotal.aspx.cs">
       <DependentUpon>NotaTotal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +296,20 @@
     <Compile Include="ConsVentasVend.aspx.designer.cs">
       <DependentUpon>ConsVentasVend.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReciboDetalle.aspx.cs">
+      <DependentUpon>ReciboDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReciboDetalle.aspx.designer.cs">
+      <DependentUpon>ReciboDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoDetalleCuatro.aspx.cs">
+      <DependentUpon>PedidoDetalleCuatro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoDetalleCuatro.aspx.designer.cs">
+      <DependentUpon>PedidoDetalleCuatro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PedidoDetalleTres.aspx.cs">
       <DependentUpon>PedidoDetalleTres.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,6 +323,13 @@
     </Compile>
     <Compile Include="PedidoDetalleDos.aspx.designer.cs">
       <DependentUpon>PedidoDetalleDos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoCuatro.aspx.cs">
+      <DependentUpon>PedidoCuatro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoCuatro.aspx.designer.cs">
+      <DependentUpon>PedidoCuatro.aspx</DependentUpon>
     </Compile>
     <Compile Include="PedidoTres.aspx.cs">
       <DependentUpon>PedidoTres.aspx</DependentUpon>
@@ -331,6 +358,20 @@
     </Compile>
     <Compile Include="PedidosEliminar.aspx.designer.cs">
       <DependentUpon>PedidosEliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PorPagarDos.aspx.cs">
+      <DependentUpon>PorPagarDos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PorPagarDos.aspx.designer.cs">
+      <DependentUpon>PorPagarDos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PorPagar.aspx.cs">
+      <DependentUpon>PorPagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PorPagar.aspx.designer.cs">
+      <DependentUpon>PorPagar.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProdEditar.aspx.cs">
       <DependentUpon>ProdEditar.aspx</DependentUpon>

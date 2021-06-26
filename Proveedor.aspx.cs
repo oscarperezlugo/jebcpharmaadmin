@@ -17,40 +17,40 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
+            {
+                string saveStaff = "INSERT into Clientes (Nombre, Correo, Telefono, Direccion, FechaRegistro, Contrasena, iDCliente, Rif, Tipo, PersonaFinal, Telefono2) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @FechaRegistro, @Contrasena, @iDCliente, @Rif, 'PROVEEDOR', @PersonaFinal, @Telefono2)";
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
-                    string saveStaff = "INSERT into Clientes (Nombre, Correo, Telefono, Direccion, FechaRegistro, Contrasena, iDCliente, Rif, Tipo, PersonaFinal, Persona) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @FechaRegistro, @Contrasena, @iDCliente, @Rif, 'PROVEEDOR', @PersonaFinal, @Persona)";
-
-                    using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
+                    querySaveStaff.Connection = openCon;
+                    querySaveStaff.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = Nombre.Value.ToString();
+                    querySaveStaff.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Correo.Value.ToString();
+                    querySaveStaff.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = Telefono.Value.ToString();
+                    querySaveStaff.Parameters.Add("@Telefono2", SqlDbType.VarChar).Value = Repetir.Value.ToString();
+                    querySaveStaff.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = Text1.Value.ToString();
+                    querySaveStaff.Parameters.Add("@FechaRegistro", SqlDbType.DateTime).Value = DateTime.Now;
+                    querySaveStaff.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = Contraseña.Value.ToString();
+                    querySaveStaff.Parameters.Add("@Rif", SqlDbType.VarChar).Value = Text2.Value.ToString();
+                    querySaveStaff.Parameters.Add("@PersonaFinal", SqlDbType.VarChar).Value = Text3.Value.ToString();
+                    querySaveStaff.Parameters.Add("@iDCliente", SqlDbType.UniqueIdentifier).Value = System.Guid.NewGuid();
+                    try
                     {
-                        querySaveStaff.Connection = openCon;
-                        querySaveStaff.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = Nombre.Value.ToString();
-                        querySaveStaff.Parameters.Add("@Persona", SqlDbType.VarChar).Value = Repetir.Value.ToString();
-                        querySaveStaff.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Correo.Value.ToString();
-                        querySaveStaff.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = Telefono.Value.ToString();
-                        querySaveStaff.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = Text1.Value.ToString();
-                        querySaveStaff.Parameters.Add("@FechaRegistro", SqlDbType.DateTime).Value = DateTime.Now;
-                        querySaveStaff.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = Contraseña.Value.ToString();
-                        querySaveStaff.Parameters.Add("@Rif", SqlDbType.VarChar).Value = Text2.Value.ToString();
-                        querySaveStaff.Parameters.Add("@PersonaFinal", SqlDbType.VarChar).Value = Text3.Value.ToString();
-                        querySaveStaff.Parameters.Add("@iDCliente", SqlDbType.UniqueIdentifier).Value = System.Guid.NewGuid();
-                        try
-                        {
-                            openCon.Open();
-                            querySaveStaff.ExecuteNonQuery();
-                            openCon.Close();
-                            Response.Write("<script>alert('USUARIO REGISTRADO')</script>");
-                        }
-                        catch (SqlException ex)
-                        {
-                            Response.Write("Error" + ex);
-                        }
+                        openCon.Open();
+                        querySaveStaff.ExecuteNonQuery();
+                        openCon.Close();
+                        Response.Write("<script>alert('USUARIO REGISTRADO')</script>");
+                    }
+                    catch (SqlException ex)
+                    {
+                        Response.Write("Error" + ex);
                     }
                 }
+            }
 
-           
+
+
+
         }
     }
 }

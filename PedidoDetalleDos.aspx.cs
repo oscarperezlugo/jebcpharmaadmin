@@ -15,7 +15,7 @@ namespace PanelAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
             VENTA = Request.Cookies["idventaP"].Value;
-            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString = Conection.ConexLine;
             string query = "SELECT NroOp FROM Cabecera WHERE iDVenta=@Correo";
 
 
@@ -73,7 +73,7 @@ namespace PanelAdmin
             {
                 STATUS = "VERIFICADO";
             }
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "UPDATE Cabecera SET Status = @Status WHERE iDVenta = @iDVenta";
 

@@ -47,7 +47,7 @@ namespace PanelAdmin
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
             int Row = Int32.Parse(Request.Cookies["rowC"].Value);
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                     string saveStaff = "UPDATE Clientes SET Nombre=@Nombre, Correo=@Correo, Telefono=@Telefono, Direccion=@Direccion, Rif=@Rif, PersonaFinal=@Persona, Persona=@Telefono2 WHERE Row=@Row";
 
@@ -72,7 +72,7 @@ namespace PanelAdmin
                             querySaveStaff.ExecuteNonQuery();
                             openCon.Close();
                             Response.Cookies["indexC"].Expires = DateTime.Now.AddDays(-1);
-                            Response.Write("<script>alert('CLIENTE ACTUALIZADO')</script>");
+                            Response.Write("<script>alert('PROVEEDOR ACTUALIZADO')</script>");
                         }
                         catch (SqlException ex)
                         {

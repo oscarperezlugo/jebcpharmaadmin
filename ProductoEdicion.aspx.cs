@@ -52,7 +52,7 @@ namespace PanelAdmin
         {
             
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "UPDATE Producto SET Producto=@Producto, PrecioD=@PrecioD, Categoria=@Categoria, Cantidad=@Cantidad, Impuesto=@Impuesto, PrecioCompra=@PrecioCompra, cpe=@cpe, Lote=@Lote, FechaVenc=@FechaVenc, Unidad=@Unidad WHERE Row=@Row";
 

@@ -92,7 +92,7 @@ namespace PanelAdmin
         }
         protected void descarga1(object sender, EventArgs e)
         {
-            string connectionString2 = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString2 = Conection.ConexLine;
             string query2 = "SELECT * FROM Clientes WHERE Tipo = 'CLIENTE' ";
 
 

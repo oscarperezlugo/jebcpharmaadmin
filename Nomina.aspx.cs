@@ -20,7 +20,7 @@ namespace PanelAdmin
             if (Contraseña.Value.ToString() == Repetir.Value.ToString())
             {
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "INSERT into Clientes (Nombre, Correo, Telefono, Direccion, FechaRegistro, Contrasena, iDCliente, Rif, Tipo, Telefono2, PersonaFinal, Sueldo, Apellido) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @FechaRegistro, @Contrasena, @iDCliente, @Rif, @Tipo, @Telefono2, @Persona, @Sueldo, @Apellido)";
 

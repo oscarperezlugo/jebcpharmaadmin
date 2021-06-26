@@ -44,7 +44,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [sicm], [Telefono2], [TipoCliente], [PersonaFinal], [Vendedor], Sueldo, Tipo, Apellido FROM [Clientes] WHERE (Tipo='VENDEDOR') OR (Tipo='ADMINISTRATIVO') OR (Tipo='ALMACEN')"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [sicm], [Telefono2], [TipoCliente], [PersonaFinal], [Vendedor], Sueldo, Tipo, Apellido FROM [Clientes] WHERE (Tipo='VENDEDOR') OR (Tipo='ADMIN') OR (Tipo='CONTADOR') OR (Tipo='SERVICIO')"></asp:SqlDataSource>
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                         <Columns>
@@ -71,7 +71,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [Sueldo], [sicm], [Telefono2], [TipoCliente], [PersonaFinal], Sueldo, Tipo, Apellido FROM [Clientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='VENDEDOR') OR ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='ADMINISTRATIVO') OR ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='ALMACEN')">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [Sueldo], [sicm], [Telefono2], [TipoCliente], [PersonaFinal], Sueldo, Tipo, Apellido FROM [Clientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='VENDEDOR') OR ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='ADMIN') OR ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='CONTADOR') OR ([Nombre] LIKE '%' + @Nombre + '%' AND Tipo='SERVICIO')">
                         <SelectParameters>
                             <asp:CookieParameter CookieName="paramcincoC" Name="Nombre" Type="String"></asp:CookieParameter>
                         </SelectParameters>

@@ -31,9 +31,9 @@
             </div></td>
                             <td><div class="fila col10L">
                                   <asp:Label ID="Label3" runat="server" Text="FACTURA" class="formularioTIT"></asp:Label><br />                       
-                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" DataSourceID="SqlDataSource1" DataTextField="Row" DataValueField="Row">
+                                <asp:DropDownList ID="DropDownList3" runat="server" CssClass="formulario" DataSourceID="SqlDataSource1" DataTextField="NroOp" DataValueField="NroOp">
                                 </asp:DropDownList>
-                                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [Row] FROM [Cabecera] WHERE ([Status] NOT LIKE '%' + @Status + '%')">
+                                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT [NroOp] FROM [Cabecera] WHERE ([Status] NOT LIKE '%' + @Status + '%')">
                                     <SelectParameters>
                                         <asp:Parameter DefaultValue="FINALIZADO" Name="Status" Type="String"></asp:Parameter>
                                     </SelectParameters>
@@ -73,7 +73,9 @@
             <hr />
            
             <div class="fila col10L">
-                <asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit"  OnClick="Unnamed1_Click"  Text="REGISTRAR PAGO"/>            
+                <asp:Button class="botonsubmit" value="REGISTRAR CLIENTE" type="submit"  runat="server" CssClass="botonsubmit no-print"  OnClick="Unnamed1_Click"  Text="REGISTRAR PAGO"/>           <br /> 
+                <br /> 
+                 
             </div>
         </div>
             </div>

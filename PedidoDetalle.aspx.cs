@@ -15,7 +15,7 @@ namespace PanelAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
             VENTA = Request.Cookies["idventaP"].Value;
-            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString = Conection.ConexLine;
             string query = "SELECT Row, Monto, MontoD FROM Cabecera WHERE iDVenta=@Correo";
 
 
@@ -38,9 +38,10 @@ namespace PanelAdmin
                         string monto = dr.GetFieldValue<Decimal>(1).ToString("#,#");
                         string montod = dr.GetFieldValue<Decimal>(2).ToString("#,#");
                         Label6.Text = "NOTA DE ENTREGA # "+nombre+"";
-                        GridView2.FooterRow.Cells[3].Text = monto;
-                        GridView2.FooterRow.Cells[2].Text = "TOTAL:";              
-                        GridView2.FooterRow.Cells[1].Text = "TOTAL GENERAL $: "+montod+"";
+                        GridView2.FooterRow.Cells[4].Text = monto;
+                        GridView2.FooterRow.Cells[3].Text = "TOTAL:";              
+                        GridView2.FooterRow.Cells[2].Text = montod;
+                        GridView2.FooterRow.Cells[1].Text = "TOTAL $: ";
 
 
 
@@ -78,7 +79,7 @@ namespace PanelAdmin
             {
                 STATUS = "VERIFICADO";
             }
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "UPDATE Cabecera SET Status = @Status WHERE iDVenta = @iDVenta";
 

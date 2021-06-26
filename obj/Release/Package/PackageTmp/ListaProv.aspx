@@ -6,14 +6,14 @@
         <div class="card-header">
                 <div class="form-row">
                     <div class="col10L">
-                         <asp:Label ID="Label6" runat="server" Text="LISTA CLIENTES" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                         <asp:Label ID="Label6" runat="server" Text="LISTA PROVEEDORES" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                     </div>
                 </div>
             </div>
         <div class="card-body">
                 <div class="form-row">                       
                     <center><input class="formulario" placeholder="Nombre" id="Correo" type="text" runat="server"/>  
-                <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="BUSCAR CLIENTE"  OnClick="Unnamed1_Click"/></center>
+                <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="BUSCAR PROVEEDOR"  OnClick="Unnamed1_Click"/></center>
                     <br />
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
@@ -24,8 +24,8 @@
                             <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion"></asp:BoundField>                                                                                                               
                             <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Rif" HeaderText="Rif" SortExpression="Rif" />                                                        
-                            <asp:BoundField DataField="Telefono2" HeaderText="Telefono2" SortExpression="Telefono2"></asp:BoundField>                            
-                            <asp:BoundField DataField="Persona" HeaderText="Persona" SortExpression="Persona"></asp:BoundField>
+                            <asp:BoundField DataField="Telefono2" HeaderText="Telefono 2" SortExpression="Telefono2"></asp:BoundField>                            
+                            <asp:BoundField DataField="PersonaFinal" HeaderText="Persona" SortExpression="PersonaFinal"></asp:BoundField>
 
                         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -38,7 +38,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [sicm], [Telefono2], [TipoCliente], [Persona] FROM [Clientes] WHERE Tipo = 'PROVEEDOR'"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [sicm], [Telefono2], [TipoCliente], [PersonaFinal] FROM [Clientes] WHERE Tipo = 'PROVEEDOR'"></asp:SqlDataSource>
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                         <Columns>
@@ -49,7 +49,7 @@
                             <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Rif" HeaderText="Rif" SortExpression="Rif" />                                                        
                             <asp:BoundField DataField="Telefono2" HeaderText="Telefono2" SortExpression="Telefono2"></asp:BoundField>                            
-                            <asp:BoundField DataField="Persona" HeaderText="Persona" SortExpression="Persona"></asp:BoundField>
+                            <asp:BoundField DataField="PersonaFinal" HeaderText="Persona" SortExpression="PersonaFinal"></asp:BoundField>
 
                         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -62,7 +62,7 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
 </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [Sueldo], [sicm], [Telefono2], [TipoCliente], [Persona] FROM [Clientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%') AND Tipo='PROVEEDOR'">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT [Nombre], [Correo], [Telefono], [Direccion], [FechaRegistro], [iDCliente], [Row], [Rif], [Sueldo], [sicm], [Telefono2], [TipoCliente], [PersonaFinal] FROM [Clientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%') AND Tipo='PROVEEDOR'">
                         <SelectParameters>
                             <asp:CookieParameter CookieName="paramcincoC" Name="Nombre" Type="String"></asp:CookieParameter>
                         </SelectParameters>

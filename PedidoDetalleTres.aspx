@@ -83,7 +83,7 @@
                             <SortedDescendingCellStyle BackColor="#E5E5E5" />
                             <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT a.Producto, a.Cantidad, a.Precio, FechaVEnc  FROM Lineas a join Producto b on a.Producto = b.Producto WHERE (a.iDVenta = @iDVenta)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PaladarMobileConnectionString %>" SelectCommand="SELECT a.Producto, a.Cantidad, b.Precio, FechaVEnc  FROM Lineas a join Producto b on a.Producto = b.Producto WHERE (a.iDVenta = @iDVenta)">
         <SelectParameters>
             <asp:CookieParameter CookieName="idventaP" Name="iDVenta" Type="String" />
         </SelectParameters>

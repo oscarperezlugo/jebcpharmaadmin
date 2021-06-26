@@ -14,7 +14,8 @@
                     <center><input class="formulario" placeholder="Nombre" id="Correo" type="text" runat="server"/>  
                 <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="BUSCAR PRODUCTO" OnClick="Unnamed1_Click" /></center>
                     <br />
-
+                    <center><asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="EXPORTAR"  OnClick="descarga1"/></center>
+                    <br />
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black" margin-left="2%" DataKeyNames="Row">
                         <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                         <Columns>

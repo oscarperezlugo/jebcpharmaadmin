@@ -17,8 +17,12 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            HttpCookie index2S7 = new HttpCookie("cobR");
+            index2S7.Value = DropDownList3.SelectedValue.ToString();
+            index2S7.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Add(index2S7);
+
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "INSERT into Pagos (Metodo, Correo, Fecha, FactPagada, Cinfirmacion, Moneda, Banco, MontoFin) VALUES (@Metodo, @Correo, @Fecha, @FactPagada, @Confirmacion, @Moneda, @Banco, @MontoFin)";
 
@@ -39,6 +43,7 @@ namespace PanelAdmin
                             querySaveStaff.ExecuteNonQuery();
                             openCon.Close();
                             Response.Write("<script>alert('PAGO REGISTRADO')</script>");
+                            Response.Redirect("ReciboDetalle.aspx");
                         }
                         catch (SqlException ex)
                         {

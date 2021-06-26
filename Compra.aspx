@@ -22,7 +22,11 @@
                                         <asp:Parameter DefaultValue="PROVEEDOR" Name="Tipo" Type="String"></asp:Parameter>
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                            </td>                            
+                            </td>   
+                            <td>
+                                <asp:Label ID="Label2" runat="server" Text="Fecha De Pago" class="formularioTIT"></asp:Label><br />                        
+                <input class="formulario" placeholder="Nombre Comercial" id="Nombre" type="date" required runat="server"/> 
+                            </td>
                         </tr>                        
                     </table>
                         <hr />

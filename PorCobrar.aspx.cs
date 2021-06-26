@@ -17,7 +17,7 @@ namespace PanelAdmin
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = GridView1.SelectedIndex;
-            string id = GridView1.Rows[i].Cells[5].Text;            
+            string id = GridView1.Rows[i].Cells[3].Text;            
             string idcliente = GridView1.Rows[i].Cells[0].Text;
             HttpCookie idS = new HttpCookie("idventaP");
             idS.Value = id;
@@ -27,7 +27,7 @@ namespace PanelAdmin
             idclienteS.Value = idcliente;
             idclienteS.Expires = DateTime.Now.AddDays(1);
             Response.Cookies.Add(idclienteS);
-            Response.Redirect("PedidoDetalle.aspx");
+            Response.Redirect("PedidoDetalleTres.aspx");
         }
     }
 }

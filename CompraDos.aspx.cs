@@ -23,7 +23,7 @@ namespace PanelAdmin
         protected void Prod(object sender, EventArgs e)
         {
             DropDownList2.Items.Clear();
-            SqlConnection con = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma");
+            SqlConnection con = new SqlConnection(Conection.ConexLine);
             SqlCommand cmd = new SqlCommand("select PrecioCompra from Producto where Producto = '" + DropDownList1.SelectedValue + "'", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -66,7 +66,7 @@ namespace PanelAdmin
             //total2S.Expires = DateTime.Now.AddDays(30);
             //Response.Cookies.Add(total2S);
             //string Ejec = Request.Cookies["idventaC"].Value;
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "INSERT into Lineas (Producto, iDVenta, Cantidad, Precio) VALUES (@Producto, @iDVenta, @Cantidad, @Precio)";
 
@@ -90,7 +90,7 @@ namespace PanelAdmin
                     }
                 }               
             }
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "Update Cabecera set Monto = CASE when Monto IS NULL then @Monto  else  Monto + @Monto END where iDVenta = @iDVenta";
 
@@ -136,7 +136,7 @@ namespace PanelAdmin
             total2S.Value = GridView1.Rows[0].Cells[0].Text;
             total2S.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(total2S);
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "UPDATE Cabecera SET iDCliente=@iDCliente, Direccion=@Direccion, Rif=@Rif WHERE iDVenta=@iDVenta";
 
@@ -160,7 +160,7 @@ namespace PanelAdmin
                         Response.Write("Error" + ex);
                     }
                 }
-                Response.Redirect("CompraTotal.aspx");
+                Response.Redirect("PedidoDetalleCuatro.aspx");
             }
             
         }

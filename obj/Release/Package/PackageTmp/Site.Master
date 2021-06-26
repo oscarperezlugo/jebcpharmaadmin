@@ -88,6 +88,7 @@
                     <li><a href="Producto.aspx">CREACION PRODUCTO</a></li>
                     <li><a href="ProdEditar.aspx">EDICION PRODUCTO</a></li>
                     <li><a href="Categoria.aspx">CREACION CATEGORIA</a></li>
+                    <li><a href="PorPagarDos.aspx">COMPRAS</a></li>
                     <%--<li>EDICION PRODUCTO</li>
                     <li>EDICION CATEGORIA</li>--%>
                 </ul>
@@ -106,11 +107,12 @@
                     <li><a href="ConsVentasMes.aspx">VENTAS POR MES</a></li>
                     <li><a href="ConsVenCli.aspx">VENTAS POR CLIENTE</a></li>
                     <li><a href="PorCobrar.aspx">CUENTAS POR COBRAR</a></li>
+                    <li><a href="PorPagar.aspx">CUENTAS POR COBRAR</a></li>
                     <li><a href="Nomina.aspx">CREAR NOMINA</a></li> 
                     <li><a href="EditarNomina.aspx">EDITAR NOMINA</a></li> 
                     <li><a href="ClientesVendedor.aspx">CLIENTES X VENDEDOR</a></li> 
                     <li><a href="ConsVentasVend.aspx">VENTAS X VENDEDOR</a></li> 
-                    <li><a href="NotasPedidos.aspx">NOTAS X FACTURA</a></li> 
+                    <li><a href="NotasPedidos.aspx">FACTURA X NOTAS</a></li> 
                 </ul>
             </div>
             <%--<div class="desplegable">

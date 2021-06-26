@@ -17,7 +17,7 @@
         <Columns>
             <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo" />
             <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
-            <asp:BoundField DataField="FechaVenta" HeaderText="FechaVenta" SortExpression="FechaVenta" />
+            <asp:BoundField DataField="FechaVenta" HeaderText="FechaVenta" SortExpression="FechaVenta" DataFormatString="{0:d}"/>
             
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -62,7 +62,7 @@
         <Columns>
             <asp:BoundField DataField="Producto" HeaderText="Producto" SortExpression="Producto" />
             <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
-            <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio"></asp:BoundField>            
+            <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" DataFormatString="{0:#,#}"></asp:BoundField>            
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                             <HeaderStyle BackColor="white" Font-Bold="True" ForeColor="black" />
@@ -83,7 +83,7 @@
                         <Columns>
                             <asp:BoundField DataField="Row" HeaderText="Row" SortExpression="Row" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Lineas" HeaderText="Lineas" SortExpression="Lineas" />
-                            <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" >
+                            <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:#,#}">
                                 <ItemStyle ForeColor="#009933"></ItemStyle>
                             </asp:BoundField>
         </Columns>
@@ -128,8 +128,8 @@
                              <asp:BoundField DataField="Lote" HeaderText="&nbsp;" SortExpression="Lote"></asp:BoundField>
                              <asp:BoundField DataField="FechaVenc" HeaderText="&nbsp;" SortExpression="FechaVenc" DataFormatString="{0:Y}"></asp:BoundField>
                              <asp:BoundField DataField="Cantidad" HeaderText="&nbsp;" SortExpression="Cantidad"></asp:BoundField>
-                             <asp:BoundField DataField="Precio" HeaderText="&nbsp;" SortExpression="Precio" DataFormatString="{0:F}"></asp:BoundField>
-                             <asp:BoundField DataField="Precio1" HeaderText="&nbsp;" SortExpression="Precio1" DataFormatString="{0:F}"></asp:BoundField>
+                             <asp:BoundField DataField="Precio" HeaderText="&nbsp;" SortExpression="Precio" DataFormatString="{0:#,#}"></asp:BoundField>
+                             <asp:BoundField DataField="Precio1" HeaderText="&nbsp;" SortExpression="Precio1" DataFormatString="{0:#,#}"></asp:BoundField>
                          </Columns>
                      </asp:GridView>
                      <asp:SqlDataSource runat="server" ID="SqlDataSource6" ConnectionString='<%$ ConnectionStrings:PaladarMobileConnectionString %>' SelectCommand="SELECT Producto.Codigo, Producto.Producto, Producto.Lote, Producto.FechaVenc, Lineas.Cantidad, Producto.Precio, Lineas.Precio FROM Lineas LEFT JOIN Producto ON Producto.Producto = Lineas.Producto WHERE iDVenta = @iDVenta;">

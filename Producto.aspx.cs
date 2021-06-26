@@ -37,7 +37,7 @@ namespace PanelAdmin
             if (Nombre.Value !=null)
             {
 
-                using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+                using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
                 {
                     string saveStaff = "INSERT into Producto (Producto, Precio, iDProducto, Foto, PrecioD, Categoria, Cantidad, Impuesto, Descuento, Tag, inCart, PrecioCompra, cpe, Lote, FechaVenc, Unidad, Codigo) VALUES (@Producto, @Precio, @iDProducto, @Foto, @PrecioD, @Categoria, @Cantidad, @Impuesto, @Descuento, @Tag, @inCart, @PrecioCompra, @cpe, @Lote, @FechaVenc, @Unidad, @Codigo)";
 

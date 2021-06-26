@@ -15,7 +15,7 @@ namespace PanelAdmin
         {
             string tasa;
             int valor;
-            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString = Conection.ConexLine;
             string query = "select max(NroOp) from cabecera where Tipo = 'PEDIDO'";
 
 
@@ -105,7 +105,7 @@ namespace PanelAdmin
             index2S3r.Value = Text1.Value;
             index2S3r.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S3r);
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo, Status, TipoVenta, Vendedor, Ref) VALUES (@FechaVenta, @iDVenta, @Tipo, 'PAGO POR VERIFICAR', @TipoVenta, @Vendedor, @Ref)";
 

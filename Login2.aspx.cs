@@ -17,7 +17,7 @@ namespace PanelAdmin
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            string connectionString = "workstation id=affisDB.mssql.somee.com;packet size=4096;user id=localarts_SQLLogin_2;pwd=kgiivi9to9;data source=affisDB.mssql.somee.com;persist security info=False;initial catalog=affisDB";
+            string connectionString = Conection.ConexLine;
             string query = "SELECT Nombre, Row, Tipo, Apellido FROM Usuario WHERE Correo=@Correo AND Contraseno=@Pass AND Tipo='VENDEDOR'";
 
 

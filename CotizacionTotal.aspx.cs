@@ -21,10 +21,11 @@ namespace PanelAdmin
             else
             {
                 Label2.Text = "OBSERVACIONES: " + Request.Cookies["observC"].Value + "";
+                Response.Cookies["observC"].Expires = DateTime.Now.AddDays(-1);
             }
            
             VENTA = Request.Cookies["idventaC"].Value;
-            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString = Conection.ConexLine;
             string query = "SELECT Row, Monto, MontoD FROM Cabecera WHERE iDVenta=@Correo";
 
 
@@ -44,7 +45,7 @@ namespace PanelAdmin
                     if (dr.Read())
                     {
                         int nombre = dr.GetFieldValue<int>(0);
-                        Label1.Text = " " + nombre.ToString() + "";
+                        Label1.Text = "# " + nombre.ToString() + "";
                         string monto = dr.GetFieldValue<Decimal>(1).ToString("#,#");
                         string montod = dr.GetFieldValue<Decimal>(2).ToString("#,#");                        
                         GridView3.FooterRow.Cells[2].Text = monto;

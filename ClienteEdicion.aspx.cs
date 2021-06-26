@@ -116,7 +116,7 @@ namespace PanelAdmin
                 Response.Cookies["indexC"].Expires = DateTime.Now.AddDays(-1);
             }
             else { }
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
                 string saveStaff = "UPDATE Clientes SET Nombre = @Nombre, Correo = @Correo, Telefono = @Telefono, Direccion = @Direccion, Rif = @Rif, sicm = @sicm WHERE iDCliente = @iDCliente";
 

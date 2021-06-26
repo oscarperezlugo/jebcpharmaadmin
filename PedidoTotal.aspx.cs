@@ -18,13 +18,14 @@ namespace PanelAdmin
             Label1.Text = GridView2.Rows[0].Cells[0].Text;
             //Label20.Text = GridView2.Rows[0].Cells[0].Text;
             Label4.Text = GridView2.Rows[0].Cells[2].Text;
-            Label7.Text = DateTime.Now.ToString();
+            Label7.Text = GridView1.Rows[0].Cells[2].Text;
             Label9.Text = GridView2.Rows[0].Cells[1].Text;
             Label17.Text = GridView2.Rows[0].Cells[1].Text;
             Label22.Text = GridView2.Rows[0].Cells[3].Text;
             string a = GridView4.Rows[0].Cells[2].Text;
-            Label24.Text = string.Format("{0:D2}", a);
+            Label24.Text = string.Format("{0:#,#}", a);
             Label25.Text = GridView4.Rows[0].Cells[2].Text;
+            GridView4.Attributes.Add("style","display: none;");
             if (Request.Cookies["obser1C"] == null)
             {
 
@@ -50,7 +51,7 @@ namespace PanelAdmin
                 Label10.Text = "NOTA DE ENTREGA " + Request.Cookies["obser3C"].Value + "";
             }
             VENTA = Request.Cookies["idventaC"].Value;
-            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString = Conection.ConexLine;
             string query = "SELECT Row, Monto, MontoD FROM Cabecera WHERE iDVenta=@Correo";
 
 

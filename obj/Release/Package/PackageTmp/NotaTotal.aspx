@@ -13,7 +13,7 @@
                 <div class="form-row">
                     
                     <div class="col10L">                        
-                        <asp:Label ID="Label6" runat="server" Text="NOTA DE ENTREGA" Style="font-weight: bold; font-size: 18px;"></asp:Label>  
+                        <asp:Label ID="Label6" runat="server" Text="NOTA DE ENTREGA #: " Style="font-weight: bold; font-size: 18px;"></asp:Label>  
                         <asp:Label ID="Label1" runat="server"  Style="font-weight: bold; font-size: 18px; text-align:right;"></asp:Label> 
                     </div>                   
                 </div>

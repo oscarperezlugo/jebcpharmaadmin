@@ -17,7 +17,7 @@ namespace PanelAdmin
             
            
             VENTA = Request.Cookies["idventaC"].Value;
-            string connectionString = "workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma";
+            string connectionString = Conection.ConexLine;
             string query = "SELECT Row, Monto, MontoD FROM Cabecera WHERE iDVenta=@Correo";
 
 

@@ -47,7 +47,7 @@
                     
                     <td><div class="fila col10L">
                         <asp:Label ID="Label9" runat="server" Text="Telefono 2" class="formularioTIT"></asp:Label><br />  
-                <input class="formulario" placeholder="Télefono (0414555555)" id="Repetir" type="password" maxlenght="11" runat="server"/>            
+                <input class="formulario" placeholder="Télefono (0414555555)" id="Repetir" type="text" maxlenght="11" runat="server"/>            
             </div></td>
                 </tr>
                 <%--<tr>

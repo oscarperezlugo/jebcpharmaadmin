@@ -26,9 +26,9 @@ namespace PanelAdmin
             index2S.Value = GUID.ToString();
             index2S.Expires = DateTime.Now.AddDays(30);
             Response.Cookies.Add(index2S);
-            using (SqlConnection openCon = new SqlConnection("workstation id=jebcpharma.mssql.somee.com;packet size=4096;user id=paladar_SQLLogin_1;pwd=bgofrm6416;data source=jebcpharma.mssql.somee.com;persist security info=False;initial catalog=jebcpharma"))
+            using (SqlConnection openCon = new SqlConnection(Conection.ConexLine))
             {
-                string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo) VALUES (@FechaVenta, @iDVenta, @Tipo)";
+                string saveStaff = "INSERT into Cabecera (FechaVenta, iDVenta, Tipo, Status, FechaPago) VALUES (@FechaVenta, @iDVenta, @Tipo, 'PENDIENTE', @FechaPago)";
 
                 using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
@@ -36,6 +36,7 @@ namespace PanelAdmin
                     querySaveStaff.Parameters.Add("@FechaVenta", SqlDbType.DateTime).Value = DateTime.Now;
                     querySaveStaff.Parameters.Add("@iDVenta", SqlDbType.UniqueIdentifier).Value = GUID;
                     querySaveStaff.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = "COMPRA";
+                    querySaveStaff.Parameters.Add("@FechaPago", SqlDbType.Date).Value = DateTime.Parse(Nombre.Value);
 
                     try
                     {
@@ -48,7 +49,7 @@ namespace PanelAdmin
                         Response.Write("Error" + ex);
                     }
                 }
-                Response.Redirect("CompraDos.aspx");
+                Response.Redirect("PedidoCuatro.aspx");
             }
         }
     }
